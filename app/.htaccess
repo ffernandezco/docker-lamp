@@ -1,0 +1,6 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Reescribir las URLs para que apunten a los archivos .php sin la extensión
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
