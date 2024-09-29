@@ -1,3 +1,6 @@
+<?php
+    session_start(); // Asegúrate de que la sesión se inicia antes de cualquier HTML
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,12 +17,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/register">Registro</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
+            <?php if (isset($_SESSION['user_email'])): ?>
+                <li class="nav-item">
+                <a class="nav-link" href="/logout.php">Cerrar sesión</a>
+                </li>
+            <?php else: ?>
+                <li class="nav-item">
+                <a class="nav-link" href="/login">Iniciar sesión</a>
+                </li>
+            <?php endif; ?>
             <li class="nav-item">
                 <a class="nav-link" href="/items">Alimentos</a>
             </li>
