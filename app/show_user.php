@@ -28,7 +28,7 @@
         exit();
     }
 
-    include 'templates/header.php'; // Incluye el header
+    include 'templates/header.php';
 ?>
 
 <div class="container mt-5 col-md-8">
@@ -41,9 +41,13 @@
         <p><strong>Correo electrónico:</strong> <?php echo $user['email']; ?></p>
         <p><strong>Teléfono:</strong> <?php echo $user['tel']; ?></p>
         <p><strong>Fecha de nacimiento:</strong> <?php echo $user['fechanacimiento']; ?></p>
+
+        <div class="d-flex gap-2 justify-content-center">
+            <a href="/modify_user?user=<?php echo $user['id']; ?>" class="btn btn-primary d-inline-flex align-items-center" role="button">Modificar usuario</a>
+        </div>
     </div>
 </div>
 
 <?php
-    include 'templates/footer.php'; // Incluye el footer
+    include 'templates/footer.php';
 ?>
