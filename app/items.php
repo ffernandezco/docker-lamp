@@ -21,11 +21,10 @@ if (!$query) {
 ?>
 
 <div class="container">
-    <h1 class="text-center">Lista de Alimentos</h1>
-    <!-- Botones para añadir y eliminar alimentos -->
+    <h1 class="text-center">Lista de alimentos</h1>
+    <p class="text-center">A continuación se muestra el listado completo de alimentos junto con su fecha de caducidad. Puedes obtener más información pulsando sobre su nombre, o bien modificarlo o eliminarlo con los accesos que aparecen.</p>
     <div class="text-center mb-4">
-        <a href="añadir_alimento.php" class="btn btn-success">Añadir Alimento</a>
-        <a href="eliminar_alimento.php" class="btn btn-danger">Eliminar Alimento</a>
+        <a href="/add_item" class="btn btn-primary d-inline-flex align-items-center">Añadir Alimento</a>
     </div>
     <div class="table-responsive mt-4">
         <table class="table table-bordered table-hover">
