@@ -20,7 +20,7 @@
         if ($result && mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
         } else {
-            echo"<script>alert('¡Vaya! No hay ningún usuario con el ID introducido'); window.location.href = '/';</script>";
+            echo"<script>alert('¡Vaya! No hay ningún usuario con el ID introducido.'); window.location.href = '/';</script>";
             exit();
         }
     } else {
