@@ -45,6 +45,9 @@
             <a href="/modify_item?item=<?php echo $item['id']; ?>" class="btn btn-primary d-inline-flex align-items-center" role="button">Modificar alimento</a>
             <a href="/delete_item?item=<?php echo $item['id']; ?>" class="btn btn-danger d-inline-flex align-items-center" role="button">Eliminar alimento</a>
         </div>
+        <div class="mt-3 text-center">
+            <a href="/items" class="text-dark">Volver al listado</a>
+        </div>
     </div>
 </div>
 
