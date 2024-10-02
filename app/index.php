@@ -19,28 +19,26 @@
 ?>
 
 <div class="container">
-  <h1 class="text-center">Bienvenido al Inventario de Alimentos</h1>
-  <p class="text-center">Gestiona tus alimentos de forma sencilla y rápida.</p>
-    <div class="table-responsive mt-4">
-        <table class="table table-bordered table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    while ($row = mysqli_fetch_array($query)) {
-                        echo "<tr>
-                                <td>{$row['id']}</td>
-                                <td>{$row['nombre']}</td>
-                              </tr>";
-                    }
-                ?>
-            </tbody>
-        </table>
-    </div>
+        <h1 class="text-center">Inventario de alimentos</h1>
+        <div class="card shadow p-4 mt-5">
+            <p class="text-center">Este Sistema Web permite gestionar un <a href="/items">listado de alimentos</a> con sus diferentes atributos: nombre, fecha de compra, fecha de caducidad, calorías y precio. Desde el listado, es posible ver todos los detalles, modificarlos o eliminar un alimento, además de añadir nuevos.</p>
+            <div class="text-center mb-4">
+                <a href="/items" class="btn btn-primary d-inline-flex align-items-center">Todos los alimentos</a>
+                <a href="/add_item" class="btn btn-secondary d-inline-flex align-items-center">Añadir alimento</a>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 mt-5">
+            <p class="text-center">Además, también se dispone de un sistema de usuarios, en el que actualmente puedes:</p>
+            <p class="text-center">
+            <?php if (isset($_SESSION['user_email'])): ?>
+                <a href="/logout.php" class="btn btn-danger d-inline-flex align-items-center">Cerrar sesión</a>
+            <?php else: ?>
+                <a href="/login" class="btn btn-success d-inline-flex align-items-center">Iniciar sesión</a>
+                <a href="/register" class="btn btn-secondary d-inline-flex align-items-center">Registrarte</a>
+            <?php endif; ?>
+            </p>
+        </div>
 </div>
 
 <?php

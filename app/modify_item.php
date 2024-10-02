@@ -34,12 +34,15 @@
 ?>
 
 <div class="container mt-5 col-md-8">
-    <h1 class="text-center">Modificar alimento</h1>
-    <h3 class="text-center mt-3">Alimento: <?php echo $item['nombre']; ?> (ID: <?php echo $item_id; ?>)</h3> <!-- Nombre e ID del alimento -->
+    <h1 class="text-center">Modificar alimento "<?php echo $item['nombre']; ?>"</h1>
     <div class="card shadow mt-5 p-4">
         <form id="item_modify_form" action="modify_item_handler.php" method="POST" class="mt-4">
             <!-- El ID del alimento es un campo oculto para enviarlo al handler -->
             <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del alimento</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $item['nombre']; ?>" required>
+            </div>
             <div class="mb-3">
                 <label for="fcompra" class="form-label">Fecha de compra</label>
                 <input type="date" class="form-control" id="fcompra" name="fcompra" value="<?php echo $item['fcompra']; ?>" required>

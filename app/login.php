@@ -29,6 +29,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mt-3" id="login_submit">Iniciar sesión</button>
             </form>
+            <div class="mt-5 text-center text-dark">
+                <p>¿No tienes cuenta? <a href="/register">Regístrate ahora</a></p>
+            </div>
         </div>
     </div>
 
