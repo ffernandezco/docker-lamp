@@ -12,16 +12,22 @@
     }
 
     // Obtenemos los datos del formulario
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Comprobamos vía SQL si el login es correcto
     $query = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        // Iniciar la sesión
-        $_SESSION['user_email'] = $email;
+        // Obtenemos los datos del usuario desde el resultado
+        $user = mysqli_fetch_assoc($result);
+
+        // Guardamos el id y el email del usuario en la sesión
+        $_SESSION['id'] = $user['id']; // Asegúrate de que el campo 'id' es correcto
+        $_SESSION['user_email'] = $user['email'];
+        
+
         echo "<script>alert('¡Bienvenido! Has iniciado sesión correctamente'); window.location.href = '/';</script>";
     } else {
         echo "<script>alert('¡Vaya! El usuario o la contraseña introducidos no son correctos. Inténtalo de nuevo.'); window.location.href = '/login';</script>";

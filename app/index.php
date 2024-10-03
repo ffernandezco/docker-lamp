@@ -32,6 +32,7 @@
             <p class="text-center">Además, también se dispone de un sistema de usuarios, en el que actualmente puedes:</p>
             <p class="text-center">
             <?php if (isset($_SESSION['user_email'])): ?>
+                <a href="/modify_user?user=<?php echo $_SESSION['id']; ?>" class="btn btn-secondary d-inline-flex align-items-center">Modificar datos de usuario</a>
                 <a href="/logout.php" class="btn btn-danger d-inline-flex align-items-center">Cerrar sesión</a>
             <?php else: ?>
                 <a href="/login" class="btn btn-success d-inline-flex align-items-center">Iniciar sesión</a>
