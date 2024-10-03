@@ -16,27 +16,29 @@
     // Verificar si el formulario fue enviado mediante POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Recoger los datos enviados desde el formulario
-        $id = $_POST['id']; // El ID del alimento
+        $id = $_POST['id'];
         $nombre = $_POST['nombre'];
-        $fcompra = $_POST['fcompra'];
-        $fcaducidad = $_POST['fcaducidad'];
-        $calorias = $_POST['calorias'];
-        $precio = $_POST['precio'];
+        $apellidos = $_POST['apellidos'];
+        $dni = $_POST['dni'];
+        $tel = $_POST['tel'];
+        $fechanacimiento = $_POST['fechanacimiento'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
         // Consulta SQL para actualizar los datos del alimento
-        $query = "UPDATE alimentos 
-                  SET nombre = ?, fcompra = ?, fcaducidad = ?, calorias = ?, precio = ?
+        $query = "UPDATE usuarios 
+                  SET nombre = ?, apellidos = ?, dni = ?, tel = ?, fechanacimiento = ?, email = ?, password = ?
                   WHERE id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('ssiii', $nombre, $fcompra, $fcaducidad, $calorias, $precio, $id);
+        $stmt->bind_param('sssssssi', $nombre, $apellidos, $dni, $tel, $fechanacimiento, $email, $password, $id);
 
         // Ejecutar la consulta
         if ($stmt->execute()) {
             // Redirigir con un mensaje de éxito
-            echo "<script>alert('El alimento ha sido actualizado correctamente.'); window.location.href = '/items';</script>";
+            echo "<script>alert('El usuario ha sido actualizado correctamente.'); window.location.href = '/';</script>";
         } else {
             // Redirigir con un mensaje de error si falla
-            echo "<script>alert('Hubo un error al actualizar el alimento.'); window.location.href = '/modify_item?item=$id';</script>";
+            echo "<script>alert('Hubo un error al actualizar el usuario.'); window.location.href = '/modify_user?user=$id';</script>";
         }
 
         // Cerrar la conexión
@@ -44,7 +46,7 @@
         $conn->close();
     } else {
         // Evitar accesos no autorizados
-        echo "<script>alert('Acceso no autorizado.'); window.location.href = '/items';</script>";
+        echo "<script>alert('Acceso no autorizado.'); window.location.href = '/';</script>";
         exit();
     }
 ?>
