@@ -12,26 +12,25 @@
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Inventario de Alimentos</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <?php if (isset($_SESSION['user_email'])): ?>
-                <li class="nav-item">
-                <a class="nav-link" href="/logout.php">Cerrar sesión</a>
-                </li>
-            <?php else: ?>
-                <li class="nav-item">
-                <a class="nav-link" href="/login">Iniciar sesión</a>
-                </li>
-            <?php endif; ?>
-            <li class="nav-item">
-                <a class="nav-link" href="/items">Alimentos</a>
-            </li>
-        </ul>
+
+<!-- Navegación creada a partir de Bootstrap Examples: https://getbootstrap.com/docs/5.3/examples/headers/ -->
+<nav class="py-2 bg-body-tertiary border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="/" class="nav-link link-body-emphasis px-2">Inicio</a></li>
+        <li class="nav-item"><a href="/items" class="nav-link link-body-emphasis px-2">Alimentos</a></li>
+        <li class="nav-item"><a href="/add_item" class="nav-link link-body-emphasis px-2">Añadir alimento</a></li>
+      </ul>
+      <ul class="nav">
+        <?php if (isset($_SESSION['user_email'])): ?>
+            <li class="nav-item"><a class="nav-link link-body-emphasis px-2" href="/show_user?user=<?php echo $_SESSION['id']; ?>">Ver perfil</a></li>
+            <li class="nav-item"><a class="nav-link link-body-emphasis px-2" href="/modify_user?user=<?php echo $_SESSION['id']; ?>">Editar perfil</a></li>
+            <li class="nav-item"><a class="nav-link link-body-emphasis px-2" href="/logout.php">Cerrar sesión</a></li>
+        <?php else: ?>
+            <li class="nav-item"><a href="/login" class="nav-link link-body-emphasis px-2">Iniciar sesión</a></li>
+        <li class="nav-item"><a href="/register" class="nav-link link-body-emphasis px-2">Registrarse</a></li>
+        <?php endif; ?>
+      </ul>
     </div>
-</nav>
+  </nav>
 <div class="container mt-4">
