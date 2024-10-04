@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<script src="./js/validar_item.js"></script>
+<script src="./js/validar_item_modificado.js"></script>
 
 <?php
     include 'templates/footer.php';
