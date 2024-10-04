@@ -28,7 +28,7 @@
                   SET nombre = ?, fcompra = ?, fcaducidad = ?, calorias = ?, precio = ?
                   WHERE id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('ssiii', $nombre, $fcompra, $fcaducidad, $calorias, $precio, $id);
+        $stmt->bind_param('sssiii', $nombre, $fcompra, $fcaducidad, $calorias, $precio, $id);
 
         // Ejecutar la consulta
         if ($stmt->execute()) {
