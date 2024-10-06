@@ -10,10 +10,6 @@
 ## Introducción
 Basándonos en un **stack Linux + Apache + MariaDB (MySQL) + PHP 7.2** en Docker Compose con mod_rewrite habilitado por defecto, este Sistema Web propone la gestión de un **inventario de alimentos** con registro de usuarios. Será posible ver el listado almacenado de alimentos con la fecha de caducidad de cada uno de ellos (así como una vista ampliada de todos los campos), editarlos, eliminarlos o añadir uno nuevo. Por otro lado, existe la opción de registrarse e iniciar sesión, ver los detalles del perfil de un usuario y modificar la información.
 
-## Diagrama de Arquitectura 
-
-![Screenshot 2024-10-05 122248](https://github.com/user-attachments/assets/66908f7e-e6d7-474f-9e0a-f319d196a545)
-
 ## Inicialización
 
 > [!WARNING]
