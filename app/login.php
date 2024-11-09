@@ -1,4 +1,5 @@
 <?php
+    header('X-Frame-Options: DENY');
     session_start(); // Inicia la sesión
     if (isset($_SESSION['user_email'])) {
         header('Location: /'); // Redirige si ya está logueado
