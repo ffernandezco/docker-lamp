@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Validación de formato de fecha (si es necesario)
+    // Validación de formato de fecha
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fcompra) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $fcaducidad)) {
         echo "<script>alert('Formato de fecha inválido. Use AAAA-MM-DD.'); window.location.href = '/modify_item?item=$id';</script>";
         exit();
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Asociar parámetros a la consulta preparada
-    $stmt->bind_param('sssiii', $nombre, $fcompra, $fcaducidad, $calorias, $precio, $id);
+    $stmt->bind_param('sssidi', $nombre, $fcompra, $fcaducidad, $calorias, $precio, $id);
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
@@ -76,3 +76,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 ?>
+
