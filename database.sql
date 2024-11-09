@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db:3306
--- Tiempo de generación: 28-09-2024 a las 09:31:53
+-- Tiempo de generación: 09-11-2024 a las 11:41:44
 -- Versión del servidor: 10.8.2-MariaDB-1:10.8.2+maria~focal
 -- Versión de PHP: 8.2.8
 
@@ -69,20 +69,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `dni`, `nombre`, `apellidos`, `tel`, `fechanacimiento`, `email`, `password`) VALUES
-(1, '71314492W', 'Francisco', 'Fernandez Condado', 622622622, '2003-04-17', 'ffernandez032@ikasle.ehu.eus', 'fran1234'),
-(2, '79135981L', 'Diego', 'Gonzalez Tamayo', 619725058, '2024-09-24', 'dieguito.ander@yahoo.es', 'KaixoPatxi13'),
-(3, '79008700C', 'Xabier', 'Unzilla Higuero', 684007082, '2024-08-01', 'xunzilla@ikasle.ehu.eus', 'Xabier2024');
+(6, '71314492W', 'Francisco', 'Fernandez Condado', 622622622, '2003-04-17', 'ffernandez032@ikasle.ehu.eus', '$2y$10$sXlAQQQibH4OwuVW3zyKEOKE2k8B6u6kj4zHWpZxUWT67ZZoZXfhK'),
+(7, '79135981L', 'Diego', 'Gonzalez Tamayo', 688805996, '2003-05-03', 'dieguito.ander@yahoo.es', '$2y$10$C73YJradDqketdLsaeHeIeGUozSN/ylexV.FFevXGGNHt0rzlNFIm'),
+(8, '79008700C', 'Xabier', 'Unzilla Higuero', 684007082, '2024-11-04', 'xunzilla@ikasle.ehu.eus', '$2y$10$wY6BbKAwDpxxPy7wKxYn0OwnHDAUOkUG3HZYPO2Uq9jMwWswLyqAO');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `alimentos`
---
-ALTER TABLE `alimentos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -96,16 +89,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `alimentos`
---
-ALTER TABLE `alimentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
