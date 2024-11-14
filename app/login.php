@@ -1,5 +1,6 @@
 <?php
     header('X-Frame-Options: DENY');
+    header_remove('X-Powered-By'); // Elimina el encabezado X-Powered-By para mejorar la seguridad
     session_start(); // Inicia la sesión
     if (isset($_SESSION['user_email'])) {
         header('Location: /'); // Redirige si ya está logueado
