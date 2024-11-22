@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db:3306
--- Tiempo de generación: 09-11-2024 a las 11:41:44
+-- Tiempo de generación: 22-11-2024 a las 18:56:56
 -- Versión del servidor: 10.8.2-MariaDB-1:10.8.2+maria~focal
 -- Versión de PHP: 8.2.8
 
@@ -36,16 +36,18 @@ CREATE TABLE `alimentos` (
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `alimentos`
+-- Estructura de tabla para la tabla `LogsUsuarios`
 --
 
-INSERT INTO `alimentos` (`id`, `nombre`, `fcompra`, `fcaducidad`, `calorias`, `precio`) VALUES
-(1, 'Manzana', '2024-09-28', '2024-10-05', 300, 1.5),
-(2, 'Macarrones', '2024-09-29', '2025-01-11', 500, 0.9),
-(3, 'Tomate', '2024-09-28', '2024-10-05', 100, 0.97),
-(4, 'Chorizo', '2024-09-29', '2024-11-13', 800, 3),
-(5, 'Queso', '2024-08-14', '2024-09-30', 400, 4.9);
+CREATE TABLE `LogsUsuarios` (
+  `idusuario` varchar(300) NOT NULL,
+  `correo` varchar(300) NOT NULL,
+  `FechaHoraConexion` datetime NOT NULL,
+  `Conectado` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 

@@ -52,6 +52,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];
 
+            // Registrar el inicio de sesión en LogsUsuarios
+            $logQuery = "INSERT INTO LogsUsuarios (id, correo, FechaHoraConexion, conectado) VALUES (?, ?, NOW(), 1)";
+            $logStmt = $conn->prepare($logQuery);
+
+            if ($logStmt) {
+                $logStmt->bind_param('ss', $user['id'], $user['email']);
+                $logStmt->execute();
+                $logStmt->close();
+            } else {
+                error_log("Error al registrar el log: " . $conn->error);
+            }
+
             echo "<script>alert('¡Bienvenido! Has iniciado sesión correctamente'); window.location.href = '/';</script>";
         } else {
             echo "<script>alert('La contraseña introducida es incorrecta.'); window.location.href = '/login';</script>";
@@ -69,4 +81,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 ?>
-

@@ -1,4 +1,14 @@
 <?php
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'domain' => '',
+        'secure' => false,
+        'httponly' => false,
+        'samesite' => 'Strict'
+    ]);
+    session_start();
+
     // Encabezado y navbar con Bootstrap
     include './templates/header.php'; 
 
