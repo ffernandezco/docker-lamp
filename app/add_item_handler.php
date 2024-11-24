@@ -1,56 +1,58 @@
 <?php
-    session_start();
+session_start();
 
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
+$hostname = "db";
+$username = "admin";
+$password = "test";
+$db = "database";
 
-    $hostname = "db";
-    $username = "admin";
-    $password = "test";
-    $db = "database";
-    
-    $conn = mysqli_connect($hostname, $username, $password, $db);
-    if ($conn->connect_error) {
-        die("Error de conexión a la DB: " . $conn->connect_error);
-    }
-    
-    // Obtenemos los datos del formulario
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $nombre = $_POST['nombre'];
-        $fcompra = $_POST['fcompra'];
-        $fcaducidad = $_POST['fcaducidad'];
-        $calorias = $_POST['calorias'];
-        $precio = $_POST['precio'];
-    
-        // Validar que los campos no estén vacíos
-        if (!empty($nombre) && !empty($fcompra) && !empty($fcaducidad) && !empty($calorias) && !empty($precio)) {
-            
-            // Preparar consulta SQL para evitar inyección
-            $query = "INSERT INTO alimentos (nombre, fcompra, fcaducidad, calorias, precio) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($query);
-    
-            if ($stmt) {
-                // Asignar los parámetros
-                $stmt->bind_param("sssdi", $nombre, $fcompra, $fcaducidad, $calorias, $precio);
-    
-                // Ejecutar la consulta
-                if ($stmt->execute()) {
-                    echo "<script>alert('Alimento añadido correctamente'); window.location.href = '/items';</script>";
-                } else {
-                    error_log("Error al ejecutar la consulta: " . $stmt->error); // Registra el error específico
-                    echo "<script>alert('Error al añadir el alimento: " . $stmt->error . "'); window.location.href = '/add_item';</script>";
-                }
-    
-                $stmt->close();
+$conn = mysqli_connect($hostname, $username, $password, $db);
+if ($conn->connect_error) {
+    die("Error de conexión a la DB: " . $conn->connect_error);
+}
+
+// Obtenemos los datos del formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $_POST['nombre'];
+    $fcompra = $_POST['fcompra'];
+    $fcaducidad = $_POST['fcaducidad'];
+    $calorias = $_POST['calorias'];
+    $precio = $_POST['precio'];
+
+    // Validar que los campos no estén vacíos
+    if (!empty($nombre) && !empty($fcompra) && !empty($fcaducidad) && !empty($calorias) && !empty($precio)) {
+        
+        // Preparar consulta SQL para evitar inyección
+        $query = "INSERT INTO alimentos (nombre, fcompra, fcaducidad, calorias, precio) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($query);
+
+        if ($stmt) {
+            // Asignar los parámetros
+            $stmt->bind_param("sssdi", $nombre, $fcompra, $fcaducidad, $calorias, $precio);
+
+            // Ejecutar la consulta
+            if ($stmt->execute()) {
+                header("Location: /items");
+                exit();
             } else {
-                echo "<script>alert('Error al preparar la consulta'); window.location.href = '/add_item';</script>";
+                header("Location: /error.php?error=insert");
+                exit();
             }
-            
+
+            $stmt->close();
         } else {
-            echo "<script>alert('Deben rellenarse todos los campos'); window.location.href = '/add_item';</script>";
+            header("Location: /error.php?error=prepare");
+            exit();
         }
+        
+    } else {
+        header("Location: /error.php?error=emptyfields");
+        exit();
     }
-    
-    $conn->close();
-    ?>
+}
+
+$conn->close();
+?>

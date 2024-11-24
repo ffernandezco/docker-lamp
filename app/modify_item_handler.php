@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validar y sanitizar el ID
     $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
     if ($id === false) {
-        echo "<script>alert('ID inválido.'); window.location.href = '/items';</script>";
+        header("Location: /error.php?error=emptyfields");
         exit();
     }
 
@@ -31,13 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validación adicional para los campos numéricos
     if ($calorias === false || $precio === false) {
-        echo "<script>alert('Datos inválidos: calorías o precio no son válidos.'); window.location.href = '/modify_item?item=$id';</script>";
+        header("Location: /error.php?error=invalidnumeric");
         exit();
     }
 
     // Validación de formato de fecha
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fcompra) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $fcaducidad)) {
-        echo "<script>alert('Formato de fecha inválido. Use AAAA-MM-DD.'); window.location.href = '/modify_item?item=$id';</script>";
+        header("Location: /error.php?error=invaliddate");
         exit();
     }
 
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificación adicional en caso de que la preparación falle
     if (!$stmt) {
         error_log("Error al preparar la consulta: " . $conn->error);
-        echo "<script>alert('Error interno del servidor.'); window.location.href = '/items';</script>";
+        header("Location: /error.php?error=prepare");
         exit();
     }
 
@@ -59,12 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        // Mensaje de éxito
-        echo "<script>alert('El alimento ha sido actualizado correctamente.'); window.location.href = '/items';</script>";
+        // Redirigir después de una actualización exitosa
+        header("Location: /items");
+        exit();
     } else {
         // Log interno del error y mensaje genérico
         error_log("Error al ejecutar la actualización: " . $stmt->error);
-        echo "<script>alert('Hubo un error al actualizar el alimento.'); window.location.href = '/modify_item?item=$id';</script>";
+        header("Location: /error.php?error=update");
+        exit();
     }
 
     // Cerrar la declaración y la conexión
@@ -72,8 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 } else {
     // Evitar accesos no autorizados
-    echo "<script>alert('Acceso no autorizado.'); window.location.href = '/items';</script>";
+    header("Location: /error.php?error=unauthorized");
     exit();
 }
 ?>
-

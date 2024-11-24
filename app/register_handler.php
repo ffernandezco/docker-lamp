@@ -10,9 +10,8 @@ $db = "database";
 // Conexión a la base de datos
 $conn = mysqli_connect($hostname, $username, $password, $db);
 if ($conn->connect_error) {
-    // Log interno del error sin mostrar detalles al usuario
     error_log("Error de conexión a la base de datos: " . $conn->connect_error);
-    echo "<script>alert('Error de conexión. Por favor, inténtalo más tarde.'); window.location.href = '/register';</script>";
+    header("Location: /login_error.php?error=prepare");
     exit();
 }
 
@@ -25,17 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tel = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
     $fechanacimiento = filter_var(trim($_POST['fechanacimiento']), FILTER_SANITIZE_STRING);
     $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Encriptación de la contraseña
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     // Validación adicional de formato de fecha
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechanacimiento)) {
-        echo "<script>alert('Formato de fecha inválido. Use AAAA-MM-DD.'); window.location.href = '/register';</script>";
+        header("Location: /login_error.php?error=invaliddate");
         exit();
     }
 
     // Comprobación de campos obligatorios
     if (!$nombre || !$apellidos || !$dni || !$tel || !$fechanacimiento || !$email || !$password) {
-        echo "<script>alert('Todos los campos son obligatorios y deben tener un formato válido.'); window.location.href = '/register';</script>";
+        header("Location: /login_error.php?error=emptyfields");
         exit();
     }
 
@@ -44,11 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
 
-    // Verificación adicional en caso de que la preparación falle
     if (!$stmt) {
-        // Log interno del error y mensaje de error genérico al usuario
         error_log("Error al preparar la consulta de inserción: " . $conn->error);
-        echo "<script>alert('Error interno del servidor. Por favor, inténtalo más tarde.'); window.location.href = '/register';</script>";
+        header("Location: /login_error.php?error=prepare");
         exit();
     }
 
@@ -57,20 +54,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        // Redirigir con un mensaje de éxito
-        echo "<script>alert('Usuario añadido. Ahora puedes iniciar sesión'); window.location.href = '/login';</script>";
+        header("Location: /login");
+        exit();
     } else {
-        // Log interno del error y mensaje genérico al usuario
         error_log("Error al ejecutar la inserción del usuario: " . $stmt->error);
-        echo "<script>alert('Hubo un problema al crear el usuario. Por favor, inténtalo más tarde.'); window.location.href = '/register';</script>";
+        header("Location: /login_error.php?error=register");
+        exit();
     }
 
     // Cerrar la declaración y la conexión
     $stmt->close();
     $conn->close();
 } else {
-    // Evitar accesos no autorizados
-    echo "<script>alert('Acceso no autorizado.'); window.location.href = '/register';</script>";
+    header("Location: /login_error.php?error=unauthorized");
     exit();
 }
 ?>

@@ -26,17 +26,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Ejecutar la consulta
             if ($stmt->execute()) {
-                echo "<script>alert('Alimento eliminado.'); window.location.href = '/items';</script>";
+                header("Location: /items");
+                exit();
             } else {
-                echo "<script>alert('Error al eliminar el alimento.'); window.location.href = '/items';</script>";
+                header("Location: /error.php?error=delete");
+                exit();
             }
 
             $stmt->close();
         } else {
-            echo "<script>alert('Error al preparar la consulta.'); window.location.href = '/items';</script>";
+            header("Location: /error.php?error=prepare");
+            exit();
         }
     } else {
-        echo "<script>alert('ID del alimento no válido. Revisa la petición realizada.'); window.location.href = '/';</script>";
+        header("Location: /error.php?error=emptyfields");
+        exit();
     }
 }
 

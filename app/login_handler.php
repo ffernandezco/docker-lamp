@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verificación básica del email y la contraseña
     if (!$email || empty($password)) {
-        echo "<script>alert('Por favor, introduce un correo y una contraseña válidos.'); window.location.href = '/login';</script>";
+        header("Location: /login_error.php?error=invalid");
         exit();
     }
 
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$stmt) {
         error_log("Error al preparar la consulta: " . $conn->error);
-        echo "<script>alert('Error interno del servidor.'); window.location.href = '/login';</script>";
+        header("Location: /login_error.php?error=prepare");
         exit();
     }
 
@@ -63,12 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 error_log("Error al registrar el log: " . $conn->error);
             }
 
-            echo "<script>alert('¡Bienvenido! Has iniciado sesión correctamente'); window.location.href = '/';</script>";
+            header("Location: /");
+            exit();
         } else {
-            echo "<script>alert('La contraseña introducida es incorrecta.'); window.location.href = '/login';</script>";
+            header("Location: /login_error.php?error=password");
+            exit();
         }
     } else {
-        echo "<script>alert('El usuario no existe. Por favor, revisa tu correo y vuelve a intentarlo.'); window.location.href = '/login';</script>";
+        header("Location: /login_error.php?error=user");
+        exit();
     }
 
     // Cerrar la declaración y la conexión
@@ -76,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 } else {
     // Redirigir si el acceso no es mediante POST
-    echo "<script>alert('Acceso no autorizado.'); window.location.href = '/login';</script>";
+    header("Location: /login_error.php?error=unauthorized");
     exit();
 }
 ?>
