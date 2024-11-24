@@ -1,36 +1,85 @@
 <?php
-    header('X-Frame-Options: DENY');
-    session_start();
+session_start();
 
-    $hostname = "db";
-    $username = "admin";
-    $password = "test";
-    $db = "database";
-    
-    $conn = mysqli_connect($hostname, $username, $password, $db);
-    if ($conn->connect_error) {
-        die("Error de conexión a la BD: " . $conn->connect_error);
+// Configuración de la base de datos
+$hostname = "db";
+$username = "admin";
+$password = "test";
+$db = "database";
+
+// Conexión a la base de datos
+$conn = mysqli_connect($hostname, $username, $password, $db);
+if ($conn->connect_error) {
+    die("Error de conexión a la BD: " . $conn->connect_error);
+}
+
+// Verificar si el formulario fue enviado mediante POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validar y sanitizar el email y la contraseña
+    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+    $password = $_POST['password'];
+
+    // Verificación básica del email y la contraseña
+    if (!$email || empty($password)) {
+        header("Location: /login_error.php?error=invalid");
+        exit();
     }
 
-    // Obtenemos los datos del formulario
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    // Consulta SQL preparada para evitar SQL Injection
+    $query = "SELECT id, email, password FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($query);
 
-    // Comprobamos vía SQL si el login es correcto
-    $query = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
-    $result = mysqli_query($conn, $query);
+    if (!$stmt) {
+        error_log("Error al preparar la consulta: " . $conn->error);
+        header("Location: /login_error.php?error=prepare");
+        exit();
+    }
 
-    if (mysqli_num_rows($result) > 0) {
-        // Obtenemos los datos del usuario desde el resultado
-        $user = mysqli_fetch_assoc($result);
+    // Asociar parámetros a la consulta preparada
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        // Guardamos el id y el email del usuario en la sesión
-        $_SESSION['id'] = $user['id']; // Asegúrate de que el campo 'id' es correcto
-        $_SESSION['user_email'] = $user['email'];
-        
+    // Verificar si se encontró un usuario con el email proporcionado
+    if ($result->num_rows > 0) {
+        // Obtener los datos del usuario
+        $user = $result->fetch_assoc();
 
-        echo "<script>alert('¡Bienvenido! Has iniciado sesión correctamente'); window.location.href = '/';</script>";
+        // Verificar la contraseña encriptada
+        if (password_verify($password, $user['password'])) {
+            // Guardar los datos del usuario en la sesión
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['user_email'] = $user['email'];
+
+            // Registrar el inicio de sesión en LogsUsuarios
+            $logQuery = "INSERT INTO LogsUsuarios (id, correo, FechaHoraConexion, conectado) VALUES (?, ?, NOW(), 1)";
+            $logStmt = $conn->prepare($logQuery);
+
+            if ($logStmt) {
+                $logStmt->bind_param('ss', $user['id'], $user['email']);
+                $logStmt->execute();
+                $logStmt->close();
+            } else {
+                error_log("Error al registrar el log: " . $conn->error);
+            }
+
+            header("Location: /");
+            exit();
+        } else {
+            header("Location: /login_error.php?error=password");
+            exit();
+        }
     } else {
-        echo "<script>alert('¡Vaya! El usuario o la contraseña introducidos no son correctos. Inténtalo de nuevo.'); window.location.href = '/login';</script>";
+        header("Location: /login_error.php?error=user");
+        exit();
     }
+
+    // Cerrar la declaración y la conexión
+    $stmt->close();
+    $conn->close();
+} else {
+    // Redirigir si el acceso no es mediante POST
+    header("Location: /login_error.php?error=unauthorized");
+    exit();
+}
 ?>

@@ -76,8 +76,8 @@
                 <input type="email" class="form-control" id="email" name="email" value="<?php echo $item['email']; ?>" required>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" name="password" value="<?php echo $item['password']; ?>" required>
+                <label for="password" class="form-label">Nueva Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="********" required>
             </div>
             <button type="submit" id="user_modify_submit" class="btn btn-primary w-100">Modificar datos</button>
         </form>

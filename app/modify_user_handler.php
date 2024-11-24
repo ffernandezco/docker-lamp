@@ -1,53 +1,74 @@
 <?php
-    header('X-Frame-Options: DENY');
-    session_start();
+session_start();
 
-    // Configuración de la base de datos
-    $hostname = "db";
-    $username = "admin";
-    $password = "test";
-    $db = "database";
+// Configuración de la base de datos
+$hostname = "db";
+$username = "admin";
+$password = "test";
+$db = "database";
 
-    // Conexión a la base de datos
-    $conn = mysqli_connect($hostname, $username, $password, $db);
-    if ($conn->connect_error) {
-        die("Error de conexión a la DB: " . $conn->connect_error);
-    }
+// Conexión a la base de datos
+$conn = mysqli_connect($hostname, $username, $password, $db);
+if ($conn->connect_error) {
+    error_log("Error de conexión a la base de datos: " . $conn->connect_error);
+    header("Location: /login_error.php?error=prepare");
+    exit();
+}
 
-    // Verificar si el formulario fue enviado mediante POST
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Recoger los datos enviados desde el formulario
-        $id = $_POST['id'];
-        $nombre = $_POST['nombre'];
-        $apellidos = $_POST['apellidos'];
-        $dni = $_POST['dni'];
-        $tel = $_POST['tel'];
-        $fechanacimiento = $_POST['fechanacimiento'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+// Verificar si el formulario fue enviado mediante POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validar y sanitizar los datos del formulario
+    $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+    $nombre = filter_var(trim($_POST['nombre']), FILTER_SANITIZE_STRING);
+    $apellidos = filter_var(trim($_POST['apellidos']), FILTER_SANITIZE_STRING);
+    $dni = filter_var(trim($_POST['dni']), FILTER_SANITIZE_STRING);
+    $tel = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
+    $fechanacimiento = filter_var(trim($_POST['fechanacimiento']), FILTER_SANITIZE_STRING);
+    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        // Consulta SQL para actualizar los datos del alimento
-        $query = "UPDATE usuarios 
-                  SET nombre = ?, apellidos = ?, dni = ?, tel = ?, fechanacimiento = ?, email = ?, password = ?
-                  WHERE id = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param('sssssssi', $nombre, $apellidos, $dni, $tel, $fechanacimiento, $email, $password, $id);
-
-        // Ejecutar la consulta
-        if ($stmt->execute()) {
-            // Redirigir con un mensaje de éxito
-            echo "<script>alert('El usuario ha sido actualizado correctamente.'); window.location.href = '/';</script>";
-        } else {
-            // Redirigir con un mensaje de error si falla
-            echo "<script>alert('Hubo un error al actualizar el usuario.'); window.location.href = '/modify_user?user=$id';</script>";
-        }
-
-        // Cerrar la conexión
-        $stmt->close();
-        $conn->close();
-    } else {
-        // Evitar accesos no autorizados
-        echo "<script>alert('Acceso no autorizado.'); window.location.href = '/';</script>";
+    // Validación adicional de formato de fecha
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechanacimiento)) {
+        header("Location: /login_error.php?error=invaliddate");
         exit();
     }
+
+    // Comprobación de campos obligatorios
+    if ($id === false || !$nombre || !$apellidos || !$dni || !$tel || !$fechanacimiento || !$email || !$password) {
+        header("Location: /login_error.php?error=general");
+        exit();
+    }
+
+    // Consulta SQL preparada para actualizar los datos del usuario
+    $query = "UPDATE usuarios 
+              SET nombre = ?, apellidos = ?, dni = ?, tel = ?, fechanacimiento = ?, email = ?, password = ?
+              WHERE id = ?";
+    $stmt = $conn->prepare($query);
+
+    if (!$stmt) {
+        error_log("Error al preparar la consulta: " . $conn->error);
+        header("Location: /login_error.php?error=prepare");
+        exit();
+    }
+
+    // Asociar parámetros a la consulta preparada
+    $stmt->bind_param('sssssssi', $nombre, $apellidos, $dni, $tel, $fechanacimiento, $email, $password, $id);
+
+    // Ejecutar la consulta
+    if ($stmt->execute()) {
+        header("Location: /");
+        exit();
+    } else {
+        error_log("Error al ejecutar la actualización: " . $stmt->error);
+        header("Location: /login_error.php?error=update");
+        exit();
+    }
+
+    // Cerrar la declaración y la conexión
+    $stmt->close();
+    $conn->close();
+} else {
+    header("Location: /login_error.php?error=unauthorized");
+    exit();
+}
 ?>

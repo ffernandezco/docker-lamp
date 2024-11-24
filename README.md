@@ -39,6 +39,10 @@ $ docker-compose stop
 
 La documentación completa del proyecto junto con las funcionalidades disponibles para su uso se encuentran en el **fichero [doc.pdf](doc.pdf)** para su consulta en cualquier momento.
 
+## Audiorías de seguridad y _pentesting_
+
+El **documento [pentesting.pdf](pentesting.pdf)** especifica las auditorías de seguridad realizadas sobre el proyecto. Además, en el directorio [auditorias](/auditorias/) se ha incluido los informes correspondientes generados por [ZAP](https://www.zaproxy.org) para su consulta.
+
 ## Créditos y agradecimientos
 
 Este programa incluye **[Bootstrap](https://getbootstrap.com) v5.3.3**, herramienta utilizada en base a [su licencia MIT](https://github.com/twbs/bootstrap/blob/v5.3.3/LICENSE) para facilitar el diseño CSS y ofrecer algunas funcionalidades mediante JavaScript. **En la parte final de [las instrucciones de uso y documentación](#instrucciones-de-uso-y-documentaci%C3%B3n) se mencionan otros aportes de terceros** menores que han sido utilizados para el proyecto, así como agradecimientos.
