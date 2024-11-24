@@ -4,3 +4,13 @@ RewriteEngine On
 # Reescribir las URLs para que apunten a los archivos .php sin la extensión
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
+
+# CSP
+<IfModule mod_headers.c>
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self';"
+</IfModule>
+
+# Cabecera Anti-Clickjacking
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "DENY"
+</IfModule>
