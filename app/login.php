@@ -8,19 +8,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
     $password = $_POST['password']; 
     if (isset($_SESSION['id'])) { // Cambia esto por la validación real
         // Configura cookie con HttpOnly y SameSite (opcional)
-        setcookie('email', $email, time() + 3600, "/; SameSite=Strict", "", true, true);
-
+        setcookie('email', $email, time() + 3600, "/", "", true, true, ['samesite' => 'Strict']);
+    
         // Establece variables de sesión
         $_SESSION['logged_in'] = true;
         $_SESSION['email'] = $email;
-
+    
         // Redirige a index.php
         header("Location: /");
         exit();
+    }    
     } else {
         $error_message = "Credenciales inválidas, por favor inténtalo de nuevo.";
     }
-}
 ?>
 
 <!DOCTYPE html>
