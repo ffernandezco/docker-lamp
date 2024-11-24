@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditoría final</title>
+<link
+	href="final/normalize/normalize.css" rel="stylesheet">
+<link
+	href="final/themes/original/main.css" rel="stylesheet">
+<link
+	href="final/themes/original/colors.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>Auditoría final</h1>
+		<p>
+			<span>Generated with</span> <a href="https://zaproxy.org"><img
+				src="final/zap32x32.png" alt="The ZAP logo" class="zap-logo">ZAP</a>
+			<span>on dom. 24 nov. 2024, at 20:17:05</span>
+		</p>
+		<p>ZAP Versión: 2.15.0</p>
+		<p>
+			ZAP by <a href="https://checkmarx.com/">Checkmarx</a>
+		</p>
+	</header>
+
+	<main>
+
+		<section id="contents" class="contents">
+			<h2>Contents</h2>
+			<nav>
+				<ol>
+					<li><a
+						href="#about-this-report">About this report</a>
+						<ol>
+							
+							<li><a
+								href="#report-parameters">Report parameters</a></li>
+						</ol></li>
+					<data-th-block>
+					<li><a
+						href="#summaries">Summaries</a>
+						<ol>
+							<li><a
+								href="#risk-confidence-counts">Alert counts by risk and confidence</a></li>
+							<li><a
+								href="#site-risk-counts">Alert counts by site and risk</a></li>
+							<li><a
+								href="#alert-type-counts">Alert counts by alert type</a></li>
+						</ol></li>
+					<li><a
+						href="#alerts">Alerts</a>
+						<ol>
+							
+							 
+							 
+							 
+							
+							
+							
+							
+							<li><a
+								href="#alerts--risk-0-confidence-3"><span>Risk</span>=<span
+									class="risk-level">Informativo</span>, <span>Confidence</span>=<span
+									class="confidence-level">Alta</span> <span>(1)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-0-confidence-2"><span>Risk</span>=<span
+									class="risk-level">Informativo</span>, <span>Confidence</span>=<span
+									class="confidence-level">Media</span> <span>(2)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-0-confidence-1"><span>Risk</span>=<span
+									class="risk-level">Informativo</span>, <span>Confidence</span>=<span
+									class="confidence-level">Baja</span> <span>(1)</span></a></li>
+							  
+						</ol></li>
+					<li><a
+						href="#appendix">Appendix</a>
+						<ol>
+							<li><a
+								href="#alert-types">Alert types</a></li>
+						</ol></li>
+					</data-th-block>
+				</ol>
+			</nav>
+		</section>
+
+		<section
+			id="about-this-report" class="about-this-report">
+			<h2>About this report</h2>
+
+			
+
+			<section
+				id="report-parameters">
+				<h3>Report parameters</h3>
+				<div class="report-parameters--container">
+					<h4>Contexts</h4>
+					
+					
+					<p>No contexts were selected, so all contexts were included by default.</p>
+					  
+
+					<h4>Sites</h4>
+					
+					<p>The following sites were included:</p>
+					<ul class="sites-list">
+						<li><span class="site">http://127.0.0.1:81</span></li>
+					</ul>
+					
+					<p>(If no sites were selected, all sites were included by default.)</p>
+					<p>An included site must also be within one of the included contexts for its data to be included in the report.</p>
+
+					<h4>Risk levels</h4>
+					<p>
+						<span>Included</span>:
+						 
+						<span class="included-risk-codes"><span class="risk-level">Alto</span>, <span class="risk-level">Medio</span>, <span class="risk-level">Bajo</span>, <span class="risk-level">Informativo</span></span>
+					</p>
+					<p>
+						<span>Excluded</span>:
+						 <span>None</span>
+						
+					</p>
+
+					<h4>Confidence levels</h4>
+					<p>
+						<span>Included</span>:
+						
+						
+						<span class="included-confidence-codes"><span class="confidence-level">Confirmado por Usuario</span>, <span class="confidence-level">Alta</span>, <span class="confidence-level">Media</span>, <span class="confidence-level">Baja</span></span>
+					</p>
+					<p>
+						<span>Excluded</span>:
+						
+						
+						<span class="included-confidence-codes"> <span class="confidence-level">Confirmado por Usuario</span>, <span class="confidence-level">Alta</span>, <span class="confidence-level">Media</span>, <span class="confidence-level">Baja</span>, <span class="confidence-level">Falso positivo</span></span>
+					</p>
+				</div>
+			</section>
+		</section>
+
+		
+		<section>
+			
+		</section>
+		
+		<section id="summaries" class="summaries">
+			<h2>Summaries</h2>
+
+			<section
+				id="risk-confidence-counts">
+				<h3>Alert counts by risk and confidence</h3>
+				<table class="risk-confidence-counts-table">
+					<caption>
+						<p>This table shows the number of alerts for each level of risk and confidence included in the report.</p>
+						<p>(The percentages in brackets represent the count as a percentage of the total number of alerts included in the report, rounded to one decimal place.)</p>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+					</colgroup>
+					<colgroup>
+						<col
+							style="width: 14.0%"><col
+							style="width: 14.0%"><col
+							style="width: 14.0%"><col
+							style="width: 14.0%">
+						<col style="width: 14.0%">
+					</colgroup>
+					<thead>
+						<tr>
+							<td colspan="2" rowspan="2"></td>
+							<th scope="colgroup"
+								colspan="5">Confidence</th>
+						</tr>
+						<tr>
+							<th scope="col">Confirmado por Usuario</th>
+							<th scope="col">Alta</th>
+							<th scope="col">Media</th>
+							<th scope="col">Baja</th>
+							<th scope="col">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup"
+								rowspan="5">Risk</th>
+							<th scope="row">Alto</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0,0 %)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Medio</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0,0 %)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Bajo</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0,0 %)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Informativo</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(25,0 %)</span></td>
+							<td><span>2</span><br> <span
+								class="additional-info-percentages">(50,0 %)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(25,0 %)</span></td>
+							<td><span>4</span><br> <span class="additional-info-percentages">(100,0 %)</span></td>
+						</tr>
+						<tr>
+							<th scope="row">Total</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0,0 %)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(25,0 %)</span></td>
+							<td><span>2</span><br> <span
+								class="additional-info-percentages">(50,0 %)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(25,0 %)</span></td>
+							<td><span>4</span><br> <span
+								class="additional-info-percentages">(100%)</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section
+				id="site-risk-counts">
+				<h3>Alert counts by site and risk</h3>
+				<table class="site-risk-counts-table">
+					<caption>
+						<p>This table shows, for each site for which one or more alerts were raised, the number of alerts raised at each risk level.</p>
+						<p>Alerts with a confidence level of &quot;False Positive&quot; have been excluded from these counts.</p>
+						<p>(The numbers in brackets are the number of alerts raised for the site at or above that risk level.)</p>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+					</colgroup>
+					<colgroup>
+						<col
+							style="width: 16.25%"><col
+							style="width: 16.25%"><col
+							style="width: 16.25%"><col
+							style="width: 16.25%">
+					</colgroup>
+					<thead>
+						<tr>
+							<td colspan="2" rowspan="2"></td>
+							<th scope="colgroup" colspan="4">Risk</th>
+						</tr>
+						<tr>
+							<th scope="col">
+								<span>Alto</span><br>  <span
+									class="additional-info-percentages">(= Alto)</span>  
+							</th>
+							<th scope="col">
+								<span>Medio</span><br>   <span
+									class="additional-info-percentages">(&gt;= Medio)</span> 
+							</th>
+							<th scope="col">
+								<span>Bajo</span><br>   <span
+									class="additional-info-percentages">(&gt;= Bajo)</span> 
+							</th>
+							<th scope="col">
+								<span>Informativo</span><br>   <span
+									class="additional-info-percentages">(&gt;= Informativo)</span> 
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup"
+								rowspan="1">Site</th>
+							<th scope="row">http://127.0.0.1:81</th>
+							
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0)</span></td>
+							<td><span>4</span><br> <span
+								class="additional-info-percentages">(4)</span></td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section
+				id="alert-type-counts">
+				<h3>Alert counts by alert type</h3>
+				<table class="alert-type-counts-table">
+					<caption>
+						<p>This table shows the number of alerts of each alert type, together with the alert type&#39;s risk level.</p>
+						<p>(The percentages in brackets represent each count as a percentage, rounded to one decimal place, of the total number of alerts included in this report.)</p>
+					</caption>
+					<thead>
+						<tr>
+							<th scope="col">Alert type</th>
+							<th scope="col">Risk</th>
+							<th scope="col">Count</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-0">Divulgación de información - Comentarios sospechosos</a></th>
+							<td class="risk-level">Informativo</td>
+							<td><span>2</span><br> <span
+								class="additional-info-percentages">(50,0 %)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-1">Petición de Autenticación Identificada</a></th>
+							<td class="risk-level">Informativo</td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(25,0 %)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-2">Respuesta de Gestión de Sesión Identificada</a></th>
+							<td class="risk-level">Informativo</td>
+							<td><span>23</span><br> <span
+								class="additional-info-percentages">(575,0 %)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-3">User Agent Fuzzer</a></th>
+							<td class="risk-level">Informativo</td>
+							<td><span>84</span><br> <span
+								class="additional-info-percentages">(2.100,0 %)</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th scope="row">Total</th>
+							<td></td>
+							<td>4</td>
+						</tr>
+					</tfoot>
+				</table>
+			</section>
+		</section>
+
+		<section id="alerts" class="alerts">
+			<h2>Alerts</h2>
+			<ol>
+				
+				 
+				 
+				 
+				 
+				
+				
+				<li id="alerts--risk-0-confidence-3">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Informativo</span>, <span>Confidence</span>=<span
+							class="confidence-level">Alta</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://127.0.0.1:81</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-1">Petición de Autenticación Identificada</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">POST http://127.0.0.1:81/login_handler.php</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>La petición en cuestión se ha identificado como una petición de autenticación. El campo &quot;Otra información&quot; contiene un conjunto de líneas key=vvalue que identifican cualquier campo relevante. Si la solicitud está en un contexto que tiene un método de autenticación configurado como &quot;Detección automática&quot;, esta regla cambiará la autenticación para que coincida con la petición identificada.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>userParam=email</p>
+
+<p>userValue=zaproxy@example.com</p>
+
+<p>passwordParam=password</p>
+
+<p>referer=http://127.0.0.1:81/login</p>
+
+<p>csrfToken=csrf_token</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (317 bytes)</summary>
+				
+				<pre><code>POST http://127.0.0.1:81/login_handler.php HTTP/1.1
+host: 127.0.0.1:81
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0
+pragma: no-cache
+cache-control: no-cache
+content-type: application/x-www-form-urlencoded
+referer: http://127.0.0.1:81/login
+content-length: 66
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (66 bytes)</summary>
+				
+				<pre><code>email=zaproxy%40example.com&amp;password=ZAP&amp;csrf_token=&amp;enviar=enviar</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (618 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 302 Found
+Date: Sun, 24 Nov 2024 19:01:42 GMT
+Server: Apache
+X-Frame-Options: DENY
+Set-Cookie: PHPSESSID=1c052951434e9ab02d13ca76643a1bb0; path=/; secure; HttpOnly; SameSite=Strict
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Location: /login_error.php?error=user
+Content-Security-Policy: default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;self&#39;; form-action &#39;self&#39;; frame-ancestors &#39;none&#39;;
+X-Content-Type-Options: nosniff
+Content-Length: 0
+Content-Type: text/html; charset=UTF-8
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>email</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>password</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Se trata de una alerta informativa y no de una vulnerabilidad, por lo que no hay nada que corregir.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-0-confidence-2">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Informativo</span>, <span>Confidence</span>=<span
+							class="confidence-level">Media</span> <span>(2)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://127.0.0.1:81</span> <span>(2)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-2">Respuesta de Gestión de Sesión Identificada</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://127.0.0.1:81/robots.txt</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Se ha identificado que la respuesta dada contiene un token de gestión de sesión. El campo &#39;Other Info&#39; contiene un conjunto de tokens de cabecera que pueden utilizarse en el método Header Based Session Management (gestión de sesión basado en cabecera). Si la petición se encuentra en un contexto que tiene un método Session Management establecido en &quot;Auto-Detect&quot;, esta regla cambiará la gestión de sesión para utilizar los tokens identificados.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>cookie:PHPSESSID</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (204 bytes)</summary>
+				
+				<pre><code>GET http://127.0.0.1:81/robots.txt HTTP/1.1
+host: 127.0.0.1:81
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (586 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 404 Not Found
+Date: Sun, 24 Nov 2024 19:01:42 GMT
+Server: Apache
+X-Frame-Options: DENY
+Set-Cookie: PHPSESSID=db4ca9520c391f73fe76afe894675fc4; path=/; secure; HttpOnly; SameSite=Strict
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Content-Security-Policy: default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;self&#39;; form-action &#39;self&#39;; frame-ancestors &#39;none&#39;;
+X-Content-Type-Options: nosniff
+Content-Length: 2209
+Content-Type: text/html; charset=UTF-8
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (2209 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Gestión de Inventario de Alimentos&lt;/title&gt;
+
+    &lt;!-- Bootstrap v5.3.3 - CSS - MIT License (https://github.com/twbs/bootstrap/blob/v5.3.3/LICENSE)--&gt;
+    &lt;link href=&quot;/css/bootstrap/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Navegación creada a partir de Bootstrap Examples: https://getbootstrap.com/docs/5.3/examples/headers/ --&gt;
+&lt;nav class=&quot;py-2 bg-body-tertiary border-bottom&quot;&gt;
+    &lt;div class=&quot;container d-flex flex-wrap&quot;&gt;
+      &lt;ul class=&quot;nav me-auto&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;/&quot; class=&quot;nav-link link-body-emphasis px-2&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;/items&quot; class=&quot;nav-link link-body-emphasis px-2&quot;&gt;Alimentos&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;/add_item&quot; class=&quot;nav-link link-body-emphasis px-2&quot;&gt;Añadir alimento&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;nav&quot;&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;/login&quot; class=&quot;nav-link link-body-emphasis px-2&quot;&gt;Iniciar sesión&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;/register&quot; class=&quot;nav-link link-body-emphasis px-2&quot;&gt;Registrarse&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+&lt;div class=&quot;container mt-4&quot;&gt;
+
+&lt;div class=&quot;container mt-5 col-md-8&quot;&gt;
+    &lt;h1 class=&quot;text-center&quot;&gt;Error 404&lt;/h1&gt;
+
+    &lt;div class=&quot;mt-3 text-center&quot;&gt;
+            &lt;a href=&quot;/&quot; class=&quot;text-dark&quot;&gt;Volver a inicio&lt;/a&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt; &lt;!-- Cierra el div container abierto en header --&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;footer class=&quot;d-flex flex-wrap align-items-center py-3 my-4 mt-5 border-top&quot;&gt;
+    &lt;p class=&quot;text-body-secondary&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ffernandezco/docker-lamp&quot;&gt;Sistema Web para Sistemas de Gestión de Seguridad de Sistemas de Información&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+	&lt;p class=&quot;text-body-secondary&quot;&gt;Francisco Fernández, Diego González, Xabier Unzilla y Abdessamad El Horbouli&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;!-- Bootstrap v5.3.3 - JS - MIT License (https://github.com/twbs/bootstrap/blob/v5.3.3/LICENSE)--&gt;
+&lt;script src=&quot;/js/bootstrap/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/bootstrap/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>PHPSESSID</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>db4ca9520c391f73fe76afe894675fc4</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Se trata de una alerta informativa y no de una vulnerabilidad, por lo que no hay nada que corregir.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-3">User Agent Fuzzer</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://127.0.0.1:81/css/bootstrap</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Compare las diferencias en la respuesta según el fuzzeo de User Agent (por ejemplo, sitios móviles, acceso como un motor de búsqueda). Compara el código de estado de la respuesta y el hash del cuerpo de la respuesta con la respuesta original.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (219 bytes)</summary>
+				
+				<pre><code>GET http://127.0.0.1:81/css/bootstrap HTTP/1.1
+host: 127.0.0.1:81
+user-agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)
+pragma: no-cache
+cache-control: no-cache
+referer: http://127.0.0.1:81/sitemap.xml
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (168 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 403 Forbidden
+Date: Sun, 24 Nov 2024 19:11:38 GMT
+Server: Apache
+X-Frame-Options: DENY
+Content-Length: 199
+Content-Type: text/html; charset=iso-8859-1
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (199 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;403 Forbidden&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Forbidden&lt;/h1&gt;
+&lt;p&gt;You don&#39;t have permission to access this resource.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>Header User-Agent</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Attack</th>
+		<td><pre><code>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)</code></pre></td>
+	</tr>
+	
+	
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-0-confidence-1">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Informativo</span>, <span>Confidence</span>=<span
+							class="confidence-level">Baja</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://127.0.0.1:81</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-0">Divulgación de información - Comentarios sospechosos</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://127.0.0.1:81/js/bootstrap/bootstrap.min.js</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage">WSTG-v42-INFO-05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html">OWASP_2017_A03</a></span> 
+				</li>
+				<li>
+					<span><a href="https://cwe.mitre.org/data/definitions/200.html">CWE-200</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>La respuesta parece contener comentarios sospechosos que pueden ayudar a un atacante. Nota: Las coincidencias realizadas dentro de los scripts o archivos se refieren a todo el contenido, no solo a los comentarios.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>Se utilizó el siguiente patrón: \bSELECT\b y se detectó en el elemento que comienza por: &quot;!function(t,e){&quot;object&quot;==typeof exports&amp;&amp;&quot;undefined&quot;!=typeof module?module.exports=e(require(&quot;@popperjs/core&quot;)):&quot;function&quot;==type&quot;, ver campo de evidencia para el comentario/snippet sospechoso.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (253 bytes)</summary>
+				
+				<pre><code>GET http://127.0.0.1:81/js/bootstrap/bootstrap.min.js HTTP/1.1
+host: 127.0.0.1:81
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0
+pragma: no-cache
+cache-control: no-cache
+referer: http://127.0.0.1:81
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (488 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 24 Nov 2024 19:01:42 GMT
+Server: Apache
+X-Frame-Options: DENY
+Last-Modified: Sun, 24 Nov 2024 09:41:03 GMT
+ETag: &quot;ecdb-627a56a1df00f&quot;
+Accept-Ranges: bytes
+Content-Length: 60635
+Vary: Accept-Encoding
+Content-Security-Policy: default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;self&#39;; form-action &#39;self&#39;; frame-ancestors &#39;none&#39;;
+X-Content-Type-Options: nosniff
+Content-Type: application/javascript
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (60635 bytes)</summary>
+				
+				<pre><code>/*!
+  * Bootstrap v5.3.3 (https://getbootstrap.com/)
+  * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+  */
+!function(t,e){&quot;object&quot;==typeof exports&amp;&amp;&quot;undefined&quot;!=typeof module?module.exports=e(require(&quot;@popperjs/core&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;@popperjs/core&quot;],e):(t=&quot;undefined&quot;!=typeof globalThis?globalThis:t||self).bootstrap=e(t.Popper)}(this,(function(t){&quot;use strict&quot;;function e(t){const e=Object.create(null,{[Symbol.toStringTag]:{value:&quot;Module&quot;}});if(t)for(const i in t)if(&quot;default&quot;!==i){const s=Object.getOwnPropertyDescriptor(t,i);Object.defineProperty(e,i,s.get?s:{enumerable:!0,get:()=&gt;t[i]})}return e.default=t,Object.freeze(e)}const i=e(t),s=new Map,n={set(t,e,i){s.has(t)||s.set(t,new Map);const n=s.get(t);n.has(e)||0===n.size?n.set(e,i):console.error(`Bootstrap doesn&#39;t allow more than one instance per element. Bound instance: ${Array.from(n.keys())[0]}.`)},get:(t,e)=&gt;s.has(t)&amp;&amp;s.get(t).get(e)||null,remove(t,e){if(!s.has(t))return;const i=s.get(t);i.delete(e),0===i.size&amp;&amp;s.delete(t)}},o=&quot;transitionend&quot;,r=t=&gt;(t&amp;&amp;window.CSS&amp;&amp;window.CSS.escape&amp;&amp;(t=t.replace(/#([^\s&quot;#&#39;]+)/g,((t,e)=&gt;`#${CSS.escape(e)}`))),t),a=t=&gt;{t.dispatchEvent(new Event(o))},l=t=&gt;!(!t||&quot;object&quot;!=typeof t)&amp;&amp;(void 0!==t.jquery&amp;&amp;(t=t[0]),void 0!==t.nodeType),c=t=&gt;l(t)?t.jquery?t[0]:t:&quot;string&quot;==typeof t&amp;&amp;t.length&gt;0?document.querySelector(r(t)):null,h=t=&gt;{if(!l(t)||0===t.getClientRects().length)return!1;const e=&quot;visible&quot;===getComputedStyle(t).getPropertyValue(&quot;visibility&quot;),i=t.closest(&quot;details:not([open])&quot;);if(!i)return e;if(i!==t){const e=t.closest(&quot;summary&quot;);if(e&amp;&amp;e.parentNode!==i)return!1;if(null===e)return!1}return e},d=t=&gt;!t||t.nodeType!==Node.ELEMENT_NODE||!!t.classList.contains(&quot;disabled&quot;)||(void 0!==t.disabled?t.disabled:t.hasAttribute(&quot;disabled&quot;)&amp;&amp;&quot;false&quot;!==t.getAttribute(&quot;disabled&quot;)),u=t=&gt;{if(!document.documentElement.attachShadow)return null;if(&quot;function&quot;==typeof t.getRootNode){const e=t.getRootNode();return e instanceof ShadowRoot?e:null}return t instanceof ShadowRoot?t:t.parentNode?u(t.parentNode):null},_=()=&gt;{},g=t=&gt;{t.offsetHeight},f=()=&gt;window.jQuery&amp;&amp;!document.body.hasAttribute(&quot;data-bs-no-jquery&quot;)?window.jQuery:null,m=[],p=()=&gt;&quot;rtl&quot;===document.documentElement.dir,b=t=&gt;{var e;e=()=&gt;{const e=f();if(e){const i=t.NAME,s=e.fn[i];e.fn[i]=t.jQueryInterface,e.fn[i].Constructor=t,e.fn[i].noConflict=()=&gt;(e.fn[i]=s,t.jQueryInterface)}},&quot;loading&quot;===document.readyState?(m.length||document.addEventListener(&quot;DOMContentLoaded&quot;,(()=&gt;{for(const t of m)t()})),m.push(e)):e()},v=(t,e=[],i=t)=&gt;&quot;function&quot;==typeof t?t(...e):i,y=(t,e,i=!0)=&gt;{if(!i)return void v(t);const s=(t=&gt;{if(!t)return 0;let{transitionDuration:e,transitionDelay:i}=window.getComputedStyle(t);const s=Number.parseFloat(e),n=Number.parseFloat(i);return s||n?(e=e.split(&quot;,&quot;)[0],i=i.split(&quot;,&quot;)[0],1e3*(Number.parseFloat(e)+Number.parseFloat(i))):0})(e)+5;let n=!1;const r=({target:i})=&gt;{i===e&amp;&amp;(n=!0,e.removeEventListener(o,r),v(t))};e.addEventListener(o,r),setTimeout((()=&gt;{n||a(e)}),s)},w=(t,e,i,s)=&gt;{const n=t.length;let o=t.indexOf(e);return-1===o?!i&amp;&amp;s?t[n-1]:t[0]:(o+=i?1:-1,s&amp;&amp;(o=(o+n)%n),t[Math.max(0,Math.min(o,n-1))])},A=/[^.]*(?=\..*)\.|.*/,E=/\..*/,C=/::\d+$/,T={};let k=1;const $={mouseenter:&quot;mouseover&quot;,mouseleave:&quot;mouseout&quot;},S=new Set([&quot;click&quot;,&quot;dblclick&quot;,&quot;mouseup&quot;,&quot;mousedown&quot;,&quot;contextmenu&quot;,&quot;mousewheel&quot;,&quot;DOMMouseScroll&quot;,&quot;mouseover&quot;,&quot;mouseout&quot;,&quot;mousemove&quot;,&quot;selectstart&quot;,&quot;selectend&quot;,&quot;keydown&quot;,&quot;keypress&quot;,&quot;keyup&quot;,&quot;orientationchange&quot;,&quot;touchstart&quot;,&quot;touchmove&quot;,&quot;touchend&quot;,&quot;touchcancel&quot;,&quot;pointerdown&quot;,&quot;pointermove&quot;,&quot;pointerup&quot;,&quot;pointerleave&quot;,&quot;pointercancel&quot;,&quot;gesturestart&quot;,&quot;gesturechange&quot;,&quot;gestureend&quot;,&quot;focus&quot;,&quot;blur&quot;,&quot;change&quot;,&quot;reset&quot;,&quot;select&quot;,&quot;submit&quot;,&quot;focusin&quot;,&quot;focusout&quot;,&quot;load&quot;,&quot;unload&quot;,&quot;beforeunload&quot;,&quot;resize&quot;,&quot;move&quot;,&quot;DOMContentLoaded&quot;,&quot;readystatechange&quot;,&quot;error&quot;,&quot;abort&quot;,&quot;scroll&quot;]);function L(t,e){return e&amp;&amp;`${e}::${k++}`||t.uidEvent||k++}function O(t){const e=L(t);return t.uidEvent=e,T[e]=T[e]||{},T[e]}function I(t,e,i=null){return Object.values(t).find((t=&gt;t.callable===e&amp;&amp;t.delegationSelector===i))}function D(t,e,i){const s=&quot;string&quot;==typeof e,n=s?i:e||i;let o=M(t);return S.has(o)||(o=t),[s,n,o]}function N(t,e,i,s,n){if(&quot;string&quot;!=typeof e||!t)return;let[o,r,a]=D(e,i,s);if(e in $){const t=t=&gt;function(e){if(!e.relatedTarget||e.relatedTarget!==e.delegateTarget&amp;&amp;!e.delegateTarget.contains(e.relatedTarget))return t.call(this,e)};r=t(r)}const l=O(t),c=l[a]||(l[a]={}),h=I(c,r,o?i:null);if(h)return void(h.oneOff=h.oneOff&amp;&amp;n);const d=L(r,e.replace(A,&quot;&quot;)),u=o?function(t,e,i){return function s(n){const o=t.querySelectorAll(e);for(let{target:r}=n;r&amp;&amp;r!==this;r=r.parentNode)for(const a of o)if(a===r)return F(n,{delegateTarget:r}),s.oneOff&amp;&amp;j.off(t,n.type,e,i),i.apply(r,[n])}}(t,i,r):function(t,e){return function i(s){return F(s,{delegateTarget:t}),i.oneOff&amp;&amp;j.off(t,s.type,e),e.apply(t,[s])}}(t,r);u.delegationSelector=o?i:null,u.callable=r,u.oneOff=n,u.uidEvent=d,c[d]=u,t.addEventListener(a,u,o)}function P(t,e,i,s,n){const o=I(e[i],s,n);o&amp;&amp;(t.removeEventListener(i,o,Boolean(n)),delete e[i][o.uidEvent])}function x(t,e,i,s){const n=e[i]||{};for(const[o,r]of Object.entries(n))o.includes(s)&amp;&amp;P(t,e,i,r.callable,r.delegationSelector)}function M(t){return t=t.replace(E,&quot;&quot;),$[t]||t}const j={on(t,e,i,s){N(t,e,i,s,!1)},one(t,e,i,s){N(t,e,i,s,!0)},off(t,e,i,s){if(&quot;string&quot;!=typeof e||!t)return;const[n,o,r]=D(e,i,s),a=r!==e,l=O(t),c=l[r]||{},h=e.startsWith(&quot;.&quot;);if(void 0===o){if(h)for(const i of Object.keys(l))x(t,l,i,e.slice(1));for(const[i,s]of Object.entries(c)){const n=i.replace(C,&quot;&quot;);a&amp;&amp;!e.includes(n)||P(t,l,r,s.callable,s.delegationSelector)}}else{if(!Object.keys(c).length)return;P(t,l,r,o,n?i:null)}},trigger(t,e,i){if(&quot;string&quot;!=typeof e||!t)return null;const s=f();let n=null,o=!0,r=!0,a=!1;e!==M(e)&amp;&amp;s&amp;&amp;(n=s.Event(e,i),s(t).trigger(n),o=!n.isPropagationStopped(),r=!n.isImmediatePropagationStopped(),a=n.isDefaultPrevented());const l=F(new Event(e,{bubbles:o,cancelable:!0}),i);return a&amp;&amp;l.preventDefault(),r&amp;&amp;t.dispatchEvent(l),l.defaultPrevented&amp;&amp;n&amp;&amp;n.preventDefault(),l}};function F(t,e={}){for(const[i,s]of Object.entries(e))try{t[i]=s}catch(e){Object.defineProperty(t,i,{configurable:!0,get:()=&gt;s})}return t}function z(t){if(&quot;true&quot;===t)return!0;if(&quot;false&quot;===t)return!1;if(t===Number(t).toString())return Number(t);if(&quot;&quot;===t||&quot;null&quot;===t)return null;if(&quot;string&quot;!=typeof t)return t;try{return JSON.parse(decodeURIComponent(t))}catch(e){return t}}function H(t){return t.replace(/[A-Z]/g,(t=&gt;`-${t.toLowerCase()}`))}const B={setDataAttribute(t,e,i){t.setAttribute(`data-bs-${H(e)}`,i)},removeDataAttribute(t,e){t.removeAttribute(`data-bs-${H(e)}`)},getDataAttributes(t){if(!t)return{};const e={},i=Object.keys(t.dataset).filter((t=&gt;t.startsWith(&quot;bs&quot;)&amp;&amp;!t.startsWith(&quot;bsConfig&quot;)));for(const s of i){let i=s.replace(/^bs/,&quot;&quot;);i=i.charAt(0).toLowerCase()+i.slice(1,i.length),e[i]=z(t.dataset[s])}return e},getDataAttribute:(t,e)=&gt;z(t.getAttribute(`data-bs-${H(e)}`))};class q{static get Default(){return{}}static get DefaultType(){return{}}static get NAME(){throw new Error(&#39;You have to implement the static method &quot;NAME&quot;, for each component!&#39;)}_getConfig(t){return t=this._mergeConfigObj(t),t=this._configAfterMerge(t),this._typeCheckConfig(t),t}_configAfterMerge(t){return t}_mergeConfigObj(t,e){const i=l(e)?B.getDataAttribute(e,&quot;config&quot;):{};return{...this.constructor.Default,...&quot;object&quot;==typeof i?i:{},...l(e)?B.getDataAttributes(e):{},...&quot;object&quot;==typeof t?t:{}}}_typeCheckConfig(t,e=this.constructor.DefaultType){for(const[s,n]of Object.entries(e)){const e=t[s],o=l(e)?&quot;element&quot;:null==(i=e)?`${i}`:Object.prototype.toString.call(i).match(/\s([a-z]+)/i)[1].toLowerCase();if(!new RegExp(n).test(o))throw new TypeError(`${this.constructor.NAME.toUpperCase()}: Option &quot;${s}&quot; provided type &quot;${o}&quot; but expected type &quot;${n}&quot;.`)}var i}}class W extends q{constructor(t,e){super(),(t=c(t))&amp;&amp;(this._element=t,this._config=this._getConfig(e),n.set(this._element,this.constructor.DATA_KEY,this))}dispose(){n.remove(this._element,this.constructor.DATA_KEY),j.off(this._element,this.constructor.EVENT_KEY);for(const t of Object.getOwnPropertyNames(this))this[t]=null}_queueCallback(t,e,i=!0){y(t,e,i)}_getConfig(t){return t=this._mergeConfigObj(t,this._element),t=this._configAfterMerge(t),this._typeCheckConfig(t),t}static getInstance(t){return n.get(c(t),this.DATA_KEY)}static getOrCreateInstance(t,e={}){return this.getInstance(t)||new this(t,&quot;object&quot;==typeof e?e:null)}static get VERSION(){return&quot;5.3.3&quot;}static get DATA_KEY(){return`bs.${this.NAME}`}static get EVENT_KEY(){return`.${this.DATA_KEY}`}static eventName(t){return`${t}${this.EVENT_KEY}`}}const R=t=&gt;{let e=t.getAttribute(&quot;data-bs-target&quot;);if(!e||&quot;#&quot;===e){let i=t.getAttribute(&quot;href&quot;);if(!i||!i.includes(&quot;#&quot;)&amp;&amp;!i.startsWith(&quot;.&quot;))return null;i.includes(&quot;#&quot;)&amp;&amp;!i.startsWith(&quot;#&quot;)&amp;&amp;(i=`#${i.split(&quot;#&quot;)[1]}`),e=i&amp;&amp;&quot;#&quot;!==i?i.trim():null}return e?e.split(&quot;,&quot;).map((t=&gt;r(t))).join(&quot;,&quot;):null},K={find:(t,e=document.documentElement)=&gt;[].concat(...Element.prototype.querySelectorAll.call(e,t)),findOne:(t,e=document.documentElement)=&gt;Element.prototype.querySelector.call(e,t),children:(t,e)=&gt;[].concat(...t.children).filter((t=&gt;t.matches(e))),parents(t,e){const i=[];let s=t.parentNode.closest(e);for(;s;)i.push(s),s=s.parentNode.closest(e);return i},prev(t,e){let i=t.previousElementSibling;for(;i;){if(i.matches(e))return[i];i=i.previousElementSibling}return[]},next(t,e){let i=t.nextElementSibling;for(;i;){if(i.matches(e))return[i];i=i.nextElementSibling}return[]},focusableChildren(t){const e=[&quot;a&quot;,&quot;button&quot;,&quot;input&quot;,&quot;textarea&quot;,&quot;select&quot;,&quot;details&quot;,&quot;[tabindex]&quot;,&#39;[contenteditable=&quot;true&quot;]&#39;].map((t=&gt;`${t}:not([tabindex^=&quot;-&quot;])`)).join(&quot;,&quot;);return this.find(e,t).filter((t=&gt;!d(t)&amp;&amp;h(t)))},getSelectorFromElement(t){const e=R(t);return e&amp;&amp;K.findOne(e)?e:null},getElementFromSelector(t){const e=R(t);return e?K.findOne(e):null},getMultipleElementsFromSelector(t){const e=R(t);return e?K.find(e):[]}},V=(t,e=&quot;hide&quot;)=&gt;{const i=`click.dismiss${t.EVENT_KEY}`,s=t.NAME;j.on(document,i,`[data-bs-dismiss=&quot;${s}&quot;]`,(function(i){if([&quot;A&quot;,&quot;AREA&quot;].includes(this.tagName)&amp;&amp;i.preventDefault(),d(this))return;const n=K.getElementFromSelector(this)||this.closest(`.${s}`);t.getOrCreateInstance(n)[e]()}))},Q=&quot;.bs.alert&quot;,X=`close${Q}`,Y=`closed${Q}`;class U extends W{static get NAME(){return&quot;alert&quot;}close(){if(j.trigger(this._element,X).defaultPrevented)return;this._element.classList.remove(&quot;show&quot;);const t=this._element.classList.contains(&quot;fade&quot;);this._queueCallback((()=&gt;this._destroyElement()),this._element,t)}_destroyElement(){this._element.remove(),j.trigger(this._element,Y),this.dispose()}static jQueryInterface(t){return this.each((function(){const e=U.getOrCreateInstance(this);if(&quot;string&quot;==typeof t){if(void 0===e[t]||t.startsWith(&quot;_&quot;)||&quot;constructor&quot;===t)throw new TypeError(`No method named &quot;${t}&quot;`);e[t](this)}}))}}V(U,&quot;close&quot;),b(U);const G=&#39;[data-bs-toggle=&quot;button&quot;]&#39;;class J extends W{static get NAME(){return&quot;button&quot;}toggle(){this._element.setAttribute(&quot;aria-pressed&quot;,this._element.classList.toggle(&quot;active&quot;))}static jQueryInterface(t){return this.each((function(){const e=J.getOrCreateInstance(this);&quot;toggle&quot;===t&amp;&amp;e[t]()}))}}j.on(document,&quot;click.bs.button.data-api&quot;,G,(t=&gt;{t.preventDefault();const e=t.target.closest(G);J.getOrCreateInstance(e).toggle()})),b(J);const Z=&quot;.bs.swipe&quot;,tt=`touchstart${Z}`,et=`touchmove${Z}`,it=`touchend${Z}`,st=`pointerdown${Z}`,nt=`pointerup${Z}`,ot={endCallback:null,leftCallback:null,rightCallback:null},rt={endCallback:&quot;(function|null)&quot;,leftCallback:&quot;(function|null)&quot;,rightCallback:&quot;(function|null)&quot;};class at extends q{constructor(t,e){super(),this._element=t,t&amp;&amp;at.isSupported()&amp;&amp;(this._config=this._getConfig(e),this._deltaX=0,this._supportPointerEvents=Boolean(window.PointerEvent),this._initEvents())}static get Default(){return ot}static get DefaultType(){return rt}static get NAME(){return&quot;swipe&quot;}dispose(){j.off(this._element,Z)}_start(t){this._supportPointerEvents?this._eventIsPointerPenTouch(t)&amp;&amp;(this._deltaX=t.clientX):this._deltaX=t.touches[0].clientX}_end(t){this._eventIsPointerPenTouch(t)&amp;&amp;(this._deltaX=t.clientX-this._deltaX),this._handleSwipe(),v(this._config.endCallback)}_move(t){this._deltaX=t.touches&amp;&amp;t.touches.length&gt;1?0:t.touches[0].clientX-this._deltaX}_handleSwipe(){const t=Math.abs(this._deltaX);if(t&lt;=40)return;const e=t/this._deltaX;this._deltaX=0,e&amp;&amp;v(e&gt;0?this._config.rightCallback:this._config.leftCallback)}_initEvents(){this._supportPointerEvents?(j.on(this._element,st,(t=&gt;this._start(t))),j.on(this._element,nt,(t=&gt;this._end(t))),this._element.classList.add(&quot;pointer-event&quot;)):(j.on(this._element,tt,(t=&gt;this._start(t))),j.on(this._element,et,(t=&gt;this._move(t))),j.on(this._element,it,(t=&gt;this._end(t))))}_eventIsPointerPenTouch(t){return this._supportPointerEvents&amp;&amp;(&quot;pen&quot;===t.pointerType||&quot;touch&quot;===t.pointerType)}static isSupported(){return&quot;ontouchstart&quot;in document.documentElement||navigator.maxTouchPoints&gt;0}}const lt=&quot;.bs.carousel&quot;,ct=&quot;.data-api&quot;,ht=&quot;next&quot;,dt=&quot;prev&quot;,ut=&quot;left&quot;,_t=&quot;right&quot;,gt=`slide${lt}`,ft=`slid${lt}`,mt=`keydown${lt}`,pt=`mouseenter${lt}`,bt=`mouseleave${lt}`,vt=`dragstart${lt}`,yt=`load${lt}${ct}`,wt=`click${lt}${ct}`,At=&quot;carousel&quot;,Et=&quot;active&quot;,Ct=&quot;.active&quot;,Tt=&quot;.carousel-item&quot;,kt=Ct+Tt,$t={ArrowLeft:_t,ArrowRight:ut},St={interval:5e3,keyboard:!0,pause:&quot;hover&quot;,ride:!1,touch:!0,wrap:!0},Lt={interval:&quot;(number|boolean)&quot;,keyboard:&quot;boolean&quot;,pause:&quot;(string|boolean)&quot;,ride:&quot;(boolean|string)&quot;,touch:&quot;boolean&quot;,wrap:&quot;boolean&quot;};class Ot extends W{constructor(t,e){super(t,e),this._interval=null,this._activeElement=null,this._isSliding=!1,this.touchTimeout=null,this._swipeHelper=null,this._indicatorsElement=K.findOne(&quot;.carousel-indicators&quot;,this._element),this._addEventListeners(),this._config.ride===At&amp;&amp;this.cycle()}static get Default(){return St}static get DefaultType(){return Lt}static get NAME(){return&quot;carousel&quot;}next(){this._slide(ht)}nextWhenVisible(){!document.hidden&amp;&amp;h(this._element)&amp;&amp;this.next()}prev(){this._slide(dt)}pause(){this._isSliding&amp;&amp;a(this._element),this._clearInterval()}cycle(){this._clearInterval(),this._updateInterval(),this._interval=setInterval((()=&gt;this.nextWhenVisible()),this._config.interval)}_maybeEnableCycle(){this._config.ride&amp;&amp;(this._isSliding?j.one(this._element,ft,(()=&gt;this.cycle())):this.cycle())}to(t){const e=this._getItems();if(t&gt;e.length-1||t&lt;0)return;if(this._isSliding)return void j.one(this._element,ft,(()=&gt;this.to(t)));const i=this._getItemIndex(this._getActive());if(i===t)return;const s=t&gt;i?ht:dt;this._slide(s,e[t])}dispose(){this._swipeHelper&amp;&amp;this._swipeHelper.dispose(),super.dispose()}_configAfterMerge(t){return t.defaultInterval=t.interval,t}_addEventListeners(){this._config.keyboard&amp;&amp;j.on(this._element,mt,(t=&gt;this._keydown(t))),&quot;hover&quot;===this._config.pause&amp;&amp;(j.on(this._element,pt,(()=&gt;this.pause())),j.on(this._element,bt,(()=&gt;this._maybeEnableCycle()))),this._config.touch&amp;&amp;at.isSupported()&amp;&amp;this._addTouchEventListeners()}_addTouchEventListeners(){for(const t of K.find(&quot;.carousel-item img&quot;,this._element))j.on(t,vt,(t=&gt;t.preventDefault()));const t={leftCallback:()=&gt;this._slide(this._directionToOrder(ut)),rightCallback:()=&gt;this._slide(this._directionToOrder(_t)),endCallback:()=&gt;{&quot;hover&quot;===this._config.pause&amp;&amp;(this.pause(),this.touchTimeout&amp;&amp;clearTimeout(this.touchTimeout),this.touchTimeout=setTimeout((()=&gt;this._maybeEnableCycle()),500+this._config.interval))}};this._swipeHelper=new at(this._element,t)}_keydown(t){if(/input|textarea/i.test(t.target.tagName))return;const e=$t[t.key];e&amp;&amp;(t.preventDefault(),this._slide(this._directionToOrder(e)))}_getItemIndex(t){return this._getItems().indexOf(t)}_setActiveIndicatorElement(t){if(!this._indicatorsElement)return;const e=K.findOne(Ct,this._indicatorsElement);e.classList.remove(Et),e.removeAttribute(&quot;aria-current&quot;);const i=K.findOne(`[data-bs-slide-to=&quot;${t}&quot;]`,this._indicatorsElement);i&amp;&amp;(i.classList.add(Et),i.setAttribute(&quot;aria-current&quot;,&quot;true&quot;))}_updateInterval(){const t=this._activeElement||this._getActive();if(!t)return;const e=Number.parseInt(t.getAttribute(&quot;data-bs-interval&quot;),10);this._config.interval=e||this._config.defaultInterval}_slide(t,e=null){if(this._isSliding)return;const i=this._getActive(),s=t===ht,n=e||w(this._getItems(),i,s,this._config.wrap);if(n===i)return;const o=this._getItemIndex(n),r=e=&gt;j.trigger(this._element,e,{relatedTarget:n,direction:this._orderToDirection(t),from:this._getItemIndex(i),to:o});if(r(gt).defaultPrevented)return;if(!i||!n)return;const a=Boolean(this._interval);this.pause(),this._isSliding=!0,this._setActiveIndicatorElement(o),this._activeElement=n;const l=s?&quot;carousel-item-start&quot;:&quot;carousel-item-end&quot;,c=s?&quot;carousel-item-next&quot;:&quot;carousel-item-prev&quot;;n.classList.add(c),g(n),i.classList.add(l),n.classList.add(l),this._queueCallback((()=&gt;{n.classList.remove(l,c),n.classList.add(Et),i.classList.remove(Et,c,l),this._isSliding=!1,r(ft)}),i,this._isAnimated()),a&amp;&amp;this.cycle()}_isAnimated(){return this._element.classList.contains(&quot;slide&quot;)}_getActive(){return K.findOne(kt,this._element)}_getItems(){return K.find(Tt,this._element)}_clearInterval(){this._interval&amp;&amp;(clearInterval(this._interval),this._interval=null)}_directionToOrder(t){return p()?t===ut?dt:ht:t===ut?ht:dt}_orderToDirection(t){return p()?t===dt?ut:_t:t===dt?_t:ut}static jQueryInterface(t){return this.each((function(){const e=Ot.getOrCreateInstance(this,t);if(&quot;number&quot;!=typeof t){if(&quot;string&quot;==typeof t){if(void 0===e[t]||t.startsWith(&quot;_&quot;)||&quot;constructor&quot;===t)throw new TypeError(`No method named &quot;${t}&quot;`);e[t]()}}else e.to(t)}))}}j.on(document,wt,&quot;[data-bs-slide], [data-bs-slide-to]&quot;,(function(t){const e=K.getElementFromSelector(this);if(!e||!e.classList.contains(At))return;t.preventDefault();const i=Ot.getOrCreateInstance(e),s=this.getAttribute(&quot;data-bs-slide-to&quot;);return s?(i.to(s),void i._maybeEnableCycle()):&quot;next&quot;===B.getDataAttribute(this,&quot;slide&quot;)?(i.next(),void i._maybeEnableCycle()):(i.prev(),void i._maybeEnableCycle())})),j.on(window,yt,(()=&gt;{const t=K.find(&#39;[data-bs-ride=&quot;carousel&quot;]&#39;);for(const e of t)Ot.getOrCreateInstance(e)})),b(Ot);const It=&quot;.bs.collapse&quot;,Dt=`show${It}`,Nt=`shown${It}`,Pt=`hide${It}`,xt=`hidden${It}`,Mt=`click${It}.data-api`,jt=&quot;show&quot;,Ft=&quot;collapse&quot;,zt=&quot;collapsing&quot;,Ht=`:scope .${Ft} .${Ft}`,Bt=&#39;[data-bs-toggle=&quot;collapse&quot;]&#39;,qt={parent:null,toggle:!0},Wt={parent:&quot;(null|element)&quot;,toggle:&quot;boolean&quot;};class Rt extends W{constructor(t,e){super(t,e),this._isTransitioning=!1,this._triggerArray=[];const i=K.find(Bt);for(const t of i){const e=K.getSelectorFromElement(t),i=K.find(e).filter((t=&gt;t===this._element));null!==e&amp;&amp;i.length&amp;&amp;this._triggerArray.push(t)}this._initializeChildren(),this._config.parent||this._addAriaAndCollapsedClass(this._triggerArray,this._isShown()),this._config.toggle&amp;&amp;this.toggle()}static get Default(){return qt}static get DefaultType(){return Wt}static get NAME(){return&quot;collapse&quot;}toggle(){this._isShown()?this.hide():this.show()}show(){if(this._isTransitioning||this._isShown())return;let t=[];if(this._config.parent&amp;&amp;(t=this._getFirstLevelChildren(&quot;.collapse.show, .collapse.collapsing&quot;).filter((t=&gt;t!==this._element)).map((t=&gt;Rt.getOrCreateInstance(t,{toggle:!1})))),t.length&amp;&amp;t[0]._isTransitioning)return;if(j.trigger(this._element,Dt).defaultPrevented)return;for(const e of t)e.hide();const e=this._getDimension();this._element.classList.remove(Ft),this._element.classList.add(zt),this._element.style[e]=0,this._addAriaAndCollapsedClass(this._triggerArray,!0),this._isTransitioning=!0;const i=`scroll${e[0].toUpperCase()+e.slice(1)}`;this._queueCallback((()=&gt;{this._isTransitioning=!1,this._element.classList.remove(zt),this._element.classList.add(Ft,jt),this._element.style[e]=&quot;&quot;,j.trigger(this._element,Nt)}),this._element,!0),this._element.style[e]=`${this._element[i]}px`}hide(){if(this._isTransitioning||!this._isShown())return;if(j.trigger(this._element,Pt).defaultPrevented)return;const t=this._getDimension();this._element.style[t]=`${this._element.getBoundingClientRect()[t]}px`,g(this._element),this._element.classList.add(zt),this._element.classList.remove(Ft,jt);for(const t of this._triggerArray){const e=K.getElementFromSelector(t);e&amp;&amp;!this._isShown(e)&amp;&amp;this._addAriaAndCollapsedClass([t],!1)}this._isTransitioning=!0,this._element.style[t]=&quot;&quot;,this._queueCallback((()=&gt;{this._isTransitioning=!1,this._element.classList.remove(zt),this._element.classList.add(Ft),j.trigger(this._element,xt)}),this._element,!0)}_isShown(t=this._element){return t.classList.contains(jt)}_configAfterMerge(t){return t.toggle=Boolean(t.toggle),t.parent=c(t.parent),t}_getDimension(){return this._element.classList.contains(&quot;collapse-horizontal&quot;)?&quot;width&quot;:&quot;height&quot;}_initializeChildren(){if(!this._config.parent)return;const t=this._getFirstLevelChildren(Bt);for(const e of t){const t=K.getElementFromSelector(e);t&amp;&amp;this._addAriaAndCollapsedClass([e],this._isShown(t))}}_getFirstLevelChildren(t){const e=K.find(Ht,this._config.parent);return K.find(t,this._config.parent).filter((t=&gt;!e.includes(t)))}_addAriaAndCollapsedClass(t,e){if(t.length)for(const i of t)i.classList.toggle(&quot;collapsed&quot;,!e),i.setAttribute(&quot;aria-expanded&quot;,e)}static jQueryInterface(t){const e={};return&quot;string&quot;==typeof t&amp;&amp;/show|hide/.test(t)&amp;&amp;(e.toggle=!1),this.each((function(){const i=Rt.getOrCreateInstance(this,e);if(&quot;string&quot;==typeof t){if(void 0===i[t])throw new TypeError(`No method named &quot;${t}&quot;`);i[t]()}}))}}j.on(document,Mt,Bt,(function(t){(&quot;A&quot;===t.target.tagName||t.delegateTarget&amp;&amp;&quot;A&quot;===t.delegateTarget.tagName)&amp;&amp;t.preventDefault();for(const t of K.getMultipleElementsFromSelector(this))Rt.getOrCreateInstance(t,{toggle:!1}).toggle()})),b(Rt);const Kt=&quot;dropdown&quot;,Vt=&quot;.bs.dropdown&quot;,Qt=&quot;.data-api&quot;,Xt=&quot;ArrowUp&quot;,Yt=&quot;ArrowDown&quot;,Ut=`hide${Vt}`,Gt=`hidden${Vt}`,Jt=`show${Vt}`,Zt=`shown${Vt}`,te=`click${Vt}${Qt}`,ee=`keydown${Vt}${Qt}`,ie=`keyup${Vt}${Qt}`,se=&quot;show&quot;,ne=&#39;[data-bs-toggle=&quot;dropdown&quot;]:not(.disabled):not(:disabled)&#39;,oe=`${ne}.${se}`,re=&quot;.dropdown-menu&quot;,ae=p()?&quot;top-end&quot;:&quot;top-start&quot;,le=p()?&quot;top-start&quot;:&quot;top-end&quot;,ce=p()?&quot;bottom-end&quot;:&quot;bottom-start&quot;,he=p()?&quot;bottom-start&quot;:&quot;bottom-end&quot;,de=p()?&quot;left-start&quot;:&quot;right-start&quot;,ue=p()?&quot;right-start&quot;:&quot;left-start&quot;,_e={autoClose:!0,boundary:&quot;clippingParents&quot;,display:&quot;dynamic&quot;,offset:[0,2],popperConfig:null,reference:&quot;toggle&quot;},ge={autoClose:&quot;(boolean|string)&quot;,boundary:&quot;(string|element)&quot;,display:&quot;string&quot;,offset:&quot;(array|string|function)&quot;,popperConfig:&quot;(null|object|function)&quot;,reference:&quot;(string|element|object)&quot;};class fe extends W{constructor(t,e){super(t,e),this._popper=null,this._parent=this._element.parentNode,this._menu=K.next(this._element,re)[0]||K.prev(this._element,re)[0]||K.findOne(re,this._parent),this._inNavbar=this._detectNavbar()}static get Default(){return _e}static get DefaultType(){return ge}static get NAME(){return Kt}toggle(){return this._isShown()?this.hide():this.show()}show(){if(d(this._element)||this._isShown())return;const t={relatedTarget:this._element};if(!j.trigger(this._element,Jt,t).defaultPrevented){if(this._createPopper(),&quot;ontouchstart&quot;in document.documentElement&amp;&amp;!this._parent.closest(&quot;.navbar-nav&quot;))for(const t of[].concat(...document.body.children))j.on(t,&quot;mouseover&quot;,_);this._element.focus(),this._element.setAttribute(&quot;aria-expanded&quot;,!0),this._menu.classList.add(se),this._element.classList.add(se),j.trigger(this._element,Zt,t)}}hide(){if(d(this._element)||!this._isShown())return;const t={relatedTarget:this._element};this._completeHide(t)}dispose(){this._popper&amp;&amp;this._popper.destroy(),super.dispose()}update(){this._inNavbar=this._detectNavbar(),this._popper&amp;&amp;this._popper.update()}_completeHide(t){if(!j.trigger(this._element,Ut,t).defaultPrevented){if(&quot;ontouchstart&quot;in document.documentElement)for(const t of[].concat(...document.body.children))j.off(t,&quot;mouseover&quot;,_);this._popper&amp;&amp;this._popper.destroy(),this._menu.classList.remove(se),this._element.classList.remove(se),this._element.setAttribute(&quot;aria-expanded&quot;,&quot;false&quot;),B.removeDataAttribute(this._menu,&quot;popper&quot;),j.trigger(this._element,Gt,t)}}_getConfig(t){if(&quot;object&quot;==typeof(t=super._getConfig(t)).reference&amp;&amp;!l(t.reference)&amp;&amp;&quot;function&quot;!=typeof t.reference.getBoundingClientRect)throw new TypeError(`${Kt.toUpperCase()}: Option &quot;reference&quot; provided type &quot;object&quot; without a required &quot;getBoundingClientRect&quot; method.`);return t}_createPopper(){if(void 0===i)throw new TypeError(&quot;Bootstrap&#39;s dropdowns require Popper (https://popper.js.org)&quot;);let t=this._element;&quot;parent&quot;===this._config.reference?t=this._parent:l(this._config.reference)?t=c(this._config.reference):&quot;object&quot;==typeof this._config.reference&amp;&amp;(t=this._config.reference);const e=this._getPopperConfig();this._popper=i.createPopper(t,this._menu,e)}_isShown(){return this._menu.classList.contains(se)}_getPlacement(){const t=this._parent;if(t.classList.contains(&quot;dropend&quot;))return de;if(t.classList.contains(&quot;dropstart&quot;))return ue;if(t.classList.contains(&quot;dropup-center&quot;))return&quot;top&quot;;if(t.classList.contains(&quot;dropdown-center&quot;))return&quot;bottom&quot;;const e=&quot;end&quot;===getComputedStyle(this._menu).getPropertyValue(&quot;--bs-position&quot;).trim();return t.classList.contains(&quot;dropup&quot;)?e?le:ae:e?he:ce}_detectNavbar(){return null!==this._element.closest(&quot;.navbar&quot;)}_getOffset(){const{offset:t}=this._config;return&quot;string&quot;==typeof t?t.split(&quot;,&quot;).map((t=&gt;Number.parseInt(t,10))):&quot;function&quot;==typeof t?e=&gt;t(e,this._element):t}_getPopperConfig(){const t={placement:this._getPlacement(),modifiers:[{name:&quot;preventOverflow&quot;,options:{boundary:this._config.boundary}},{name:&quot;offset&quot;,options:{offset:this._getOffset()}}]};return(this._inNavbar||&quot;static&quot;===this._config.display)&amp;&amp;(B.setDataAttribute(this._menu,&quot;popper&quot;,&quot;static&quot;),t.modifiers=[{name:&quot;applyStyles&quot;,enabled:!1}]),{...t,...v(this._config.popperConfig,[t])}}_selectMenuItem({key:t,target:e}){const i=K.find(&quot;.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)&quot;,this._menu).filter((t=&gt;h(t)));i.length&amp;&amp;w(i,e,t===Yt,!i.includes(e)).focus()}static jQueryInterface(t){return this.each((function(){const e=fe.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===e[t])throw new TypeError(`No method named &quot;${t}&quot;`);e[t]()}}))}static clearMenus(t){if(2===t.button||&quot;keyup&quot;===t.type&amp;&amp;&quot;Tab&quot;!==t.key)return;const e=K.find(oe);for(const i of e){const e=fe.getInstance(i);if(!e||!1===e._config.autoClose)continue;const s=t.composedPath(),n=s.includes(e._menu);if(s.includes(e._element)||&quot;inside&quot;===e._config.autoClose&amp;&amp;!n||&quot;outside&quot;===e._config.autoClose&amp;&amp;n)continue;if(e._menu.contains(t.target)&amp;&amp;(&quot;keyup&quot;===t.type&amp;&amp;&quot;Tab&quot;===t.key||/input|select|option|textarea|form/i.test(t.target.tagName)))continue;const o={relatedTarget:e._element};&quot;click&quot;===t.type&amp;&amp;(o.clickEvent=t),e._completeHide(o)}}static dataApiKeydownHandler(t){const e=/input|textarea/i.test(t.target.tagName),i=&quot;Escape&quot;===t.key,s=[Xt,Yt].includes(t.key);if(!s&amp;&amp;!i)return;if(e&amp;&amp;!i)return;t.preventDefault();const n=this.matches(ne)?this:K.prev(this,ne)[0]||K.next(this,ne)[0]||K.findOne(ne,t.delegateTarget.parentNode),o=fe.getOrCreateInstance(n);if(s)return t.stopPropagation(),o.show(),void o._selectMenuItem(t);o._isShown()&amp;&amp;(t.stopPropagation(),o.hide(),n.focus())}}j.on(document,ee,ne,fe.dataApiKeydownHandler),j.on(document,ee,re,fe.dataApiKeydownHandler),j.on(document,te,fe.clearMenus),j.on(document,ie,fe.clearMenus),j.on(document,te,ne,(function(t){t.preventDefault(),fe.getOrCreateInstance(this).toggle()})),b(fe);const me=&quot;backdrop&quot;,pe=&quot;show&quot;,be=`mousedown.bs.${me}`,ve={className:&quot;modal-backdrop&quot;,clickCallback:null,isAnimated:!1,isVisible:!0,rootElement:&quot;body&quot;},ye={className:&quot;string&quot;,clickCallback:&quot;(function|null)&quot;,isAnimated:&quot;boolean&quot;,isVisible:&quot;boolean&quot;,rootElement:&quot;(element|string)&quot;};class we extends q{constructor(t){super(),this._config=this._getConfig(t),this._isAppended=!1,this._element=null}static get Default(){return ve}static get DefaultType(){return ye}static get NAME(){return me}show(t){if(!this._config.isVisible)return void v(t);this._append();const e=this._getElement();this._config.isAnimated&amp;&amp;g(e),e.classList.add(pe),this._emulateAnimation((()=&gt;{v(t)}))}hide(t){this._config.isVisible?(this._getElement().classList.remove(pe),this._emulateAnimation((()=&gt;{this.dispose(),v(t)}))):v(t)}dispose(){this._isAppended&amp;&amp;(j.off(this._element,be),this._element.remove(),this._isAppended=!1)}_getElement(){if(!this._element){const t=document.createElement(&quot;div&quot;);t.className=this._config.className,this._config.isAnimated&amp;&amp;t.classList.add(&quot;fade&quot;),this._element=t}return this._element}_configAfterMerge(t){return t.rootElement=c(t.rootElement),t}_append(){if(this._isAppended)return;const t=this._getElement();this._config.rootElement.append(t),j.on(t,be,(()=&gt;{v(this._config.clickCallback)})),this._isAppended=!0}_emulateAnimation(t){y(t,this._getElement(),this._config.isAnimated)}}const Ae=&quot;.bs.focustrap&quot;,Ee=`focusin${Ae}`,Ce=`keydown.tab${Ae}`,Te=&quot;backward&quot;,ke={autofocus:!0,trapElement:null},$e={autofocus:&quot;boolean&quot;,trapElement:&quot;element&quot;};class Se extends q{constructor(t){super(),this._config=this._getConfig(t),this._isActive=!1,this._lastTabNavDirection=null}static get Default(){return ke}static get DefaultType(){return $e}static get NAME(){return&quot;focustrap&quot;}activate(){this._isActive||(this._config.autofocus&amp;&amp;this._config.trapElement.focus(),j.off(document,Ae),j.on(document,Ee,(t=&gt;this._handleFocusin(t))),j.on(document,Ce,(t=&gt;this._handleKeydown(t))),this._isActive=!0)}deactivate(){this._isActive&amp;&amp;(this._isActive=!1,j.off(document,Ae))}_handleFocusin(t){const{trapElement:e}=this._config;if(t.target===document||t.target===e||e.contains(t.target))return;const i=K.focusableChildren(e);0===i.length?e.focus():this._lastTabNavDirection===Te?i[i.length-1].focus():i[0].focus()}_handleKeydown(t){&quot;Tab&quot;===t.key&amp;&amp;(this._lastTabNavDirection=t.shiftKey?Te:&quot;forward&quot;)}}const Le=&quot;.fixed-top, .fixed-bottom, .is-fixed, .sticky-top&quot;,Oe=&quot;.sticky-top&quot;,Ie=&quot;padding-right&quot;,De=&quot;margin-right&quot;;class Ne{constructor(){this._element=document.body}getWidth(){const t=document.documentElement.clientWidth;return Math.abs(window.innerWidth-t)}hide(){const t=this.getWidth();this._disableOverFlow(),this._setElementAttributes(this._element,Ie,(e=&gt;e+t)),this._setElementAttributes(Le,Ie,(e=&gt;e+t)),this._setElementAttributes(Oe,De,(e=&gt;e-t))}reset(){this._resetElementAttributes(this._element,&quot;overflow&quot;),this._resetElementAttributes(this._element,Ie),this._resetElementAttributes(Le,Ie),this._resetElementAttributes(Oe,De)}isOverflowing(){return this.getWidth()&gt;0}_disableOverFlow(){this._saveInitialAttribute(this._element,&quot;overflow&quot;),this._element.style.overflow=&quot;hidden&quot;}_setElementAttributes(t,e,i){const s=this.getWidth();this._applyManipulationCallback(t,(t=&gt;{if(t!==this._element&amp;&amp;window.innerWidth&gt;t.clientWidth+s)return;this._saveInitialAttribute(t,e);const n=window.getComputedStyle(t).getPropertyValue(e);t.style.setProperty(e,`${i(Number.parseFloat(n))}px`)}))}_saveInitialAttribute(t,e){const i=t.style.getPropertyValue(e);i&amp;&amp;B.setDataAttribute(t,e,i)}_resetElementAttributes(t,e){this._applyManipulationCallback(t,(t=&gt;{const i=B.getDataAttribute(t,e);null!==i?(B.removeDataAttribute(t,e),t.style.setProperty(e,i)):t.style.removeProperty(e)}))}_applyManipulationCallback(t,e){if(l(t))e(t);else for(const i of K.find(t,this._element))e(i)}}const Pe=&quot;.bs.modal&quot;,xe=`hide${Pe}`,Me=`hidePrevented${Pe}`,je=`hidden${Pe}`,Fe=`show${Pe}`,ze=`shown${Pe}`,He=`resize${Pe}`,Be=`click.dismiss${Pe}`,qe=`mousedown.dismiss${Pe}`,We=`keydown.dismiss${Pe}`,Re=`click${Pe}.data-api`,Ke=&quot;modal-open&quot;,Ve=&quot;show&quot;,Qe=&quot;modal-static&quot;,Xe={backdrop:!0,focus:!0,keyboard:!0},Ye={backdrop:&quot;(boolean|string)&quot;,focus:&quot;boolean&quot;,keyboard:&quot;boolean&quot;};class Ue extends W{constructor(t,e){super(t,e),this._dialog=K.findOne(&quot;.modal-dialog&quot;,this._element),this._backdrop=this._initializeBackDrop(),this._focustrap=this._initializeFocusTrap(),this._isShown=!1,this._isTransitioning=!1,this._scrollBar=new Ne,this._addEventListeners()}static get Default(){return Xe}static get DefaultType(){return Ye}static get NAME(){return&quot;modal&quot;}toggle(t){return this._isShown?this.hide():this.show(t)}show(t){this._isShown||this._isTransitioning||j.trigger(this._element,Fe,{relatedTarget:t}).defaultPrevented||(this._isShown=!0,this._isTransitioning=!0,this._scrollBar.hide(),document.body.classList.add(Ke),this._adjustDialog(),this._backdrop.show((()=&gt;this._showElement(t))))}hide(){this._isShown&amp;&amp;!this._isTransitioning&amp;&amp;(j.trigger(this._element,xe).defaultPrevented||(this._isShown=!1,this._isTransitioning=!0,this._focustrap.deactivate(),this._element.classList.remove(Ve),this._queueCallback((()=&gt;this._hideModal()),this._element,this._isAnimated())))}dispose(){j.off(window,Pe),j.off(this._dialog,Pe),this._backdrop.dispose(),this._focustrap.deactivate(),super.dispose()}handleUpdate(){this._adjustDialog()}_initializeBackDrop(){return new we({isVisible:Boolean(this._config.backdrop),isAnimated:this._isAnimated()})}_initializeFocusTrap(){return new Se({trapElement:this._element})}_showElement(t){document.body.contains(this._element)||document.body.append(this._element),this._element.style.display=&quot;block&quot;,this._element.removeAttribute(&quot;aria-hidden&quot;),this._element.setAttribute(&quot;aria-modal&quot;,!0),this._element.setAttribute(&quot;role&quot;,&quot;dialog&quot;),this._element.scrollTop=0;const e=K.findOne(&quot;.modal-body&quot;,this._dialog);e&amp;&amp;(e.scrollTop=0),g(this._element),this._element.classList.add(Ve),this._queueCallback((()=&gt;{this._config.focus&amp;&amp;this._focustrap.activate(),this._isTransitioning=!1,j.trigger(this._element,ze,{relatedTarget:t})}),this._dialog,this._isAnimated())}_addEventListeners(){j.on(this._element,We,(t=&gt;{&quot;Escape&quot;===t.key&amp;&amp;(this._config.keyboard?this.hide():this._triggerBackdropTransition())})),j.on(window,He,(()=&gt;{this._isShown&amp;&amp;!this._isTransitioning&amp;&amp;this._adjustDialog()})),j.on(this._element,qe,(t=&gt;{j.one(this._element,Be,(e=&gt;{this._element===t.target&amp;&amp;this._element===e.target&amp;&amp;(&quot;static&quot;!==this._config.backdrop?this._config.backdrop&amp;&amp;this.hide():this._triggerBackdropTransition())}))}))}_hideModal(){this._element.style.display=&quot;none&quot;,this._element.setAttribute(&quot;aria-hidden&quot;,!0),this._element.removeAttribute(&quot;aria-modal&quot;),this._element.removeAttribute(&quot;role&quot;),this._isTransitioning=!1,this._backdrop.hide((()=&gt;{document.body.classList.remove(Ke),this._resetAdjustments(),this._scrollBar.reset(),j.trigger(this._element,je)}))}_isAnimated(){return this._element.classList.contains(&quot;fade&quot;)}_triggerBackdropTransition(){if(j.trigger(this._element,Me).defaultPrevented)return;const t=this._element.scrollHeight&gt;document.documentElement.clientHeight,e=this._element.style.overflowY;&quot;hidden&quot;===e||this._element.classList.contains(Qe)||(t||(this._element.style.overflowY=&quot;hidden&quot;),this._element.classList.add(Qe),this._queueCallback((()=&gt;{this._element.classList.remove(Qe),this._queueCallback((()=&gt;{this._element.style.overflowY=e}),this._dialog)}),this._dialog),this._element.focus())}_adjustDialog(){const t=this._element.scrollHeight&gt;document.documentElement.clientHeight,e=this._scrollBar.getWidth(),i=e&gt;0;if(i&amp;&amp;!t){const t=p()?&quot;paddingLeft&quot;:&quot;paddingRight&quot;;this._element.style[t]=`${e}px`}if(!i&amp;&amp;t){const t=p()?&quot;paddingRight&quot;:&quot;paddingLeft&quot;;this._element.style[t]=`${e}px`}}_resetAdjustments(){this._element.style.paddingLeft=&quot;&quot;,this._element.style.paddingRight=&quot;&quot;}static jQueryInterface(t,e){return this.each((function(){const i=Ue.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===i[t])throw new TypeError(`No method named &quot;${t}&quot;`);i[t](e)}}))}}j.on(document,Re,&#39;[data-bs-toggle=&quot;modal&quot;]&#39;,(function(t){const e=K.getElementFromSelector(this);[&quot;A&quot;,&quot;AREA&quot;].includes(this.tagName)&amp;&amp;t.preventDefault(),j.one(e,Fe,(t=&gt;{t.defaultPrevented||j.one(e,je,(()=&gt;{h(this)&amp;&amp;this.focus()}))}));const i=K.findOne(&quot;.modal.show&quot;);i&amp;&amp;Ue.getInstance(i).hide(),Ue.getOrCreateInstance(e).toggle(this)})),V(Ue),b(Ue);const Ge=&quot;.bs.offcanvas&quot;,Je=&quot;.data-api&quot;,Ze=`load${Ge}${Je}`,ti=&quot;show&quot;,ei=&quot;showing&quot;,ii=&quot;hiding&quot;,si=&quot;.offcanvas.show&quot;,ni=`show${Ge}`,oi=`shown${Ge}`,ri=`hide${Ge}`,ai=`hidePrevented${Ge}`,li=`hidden${Ge}`,ci=`resize${Ge}`,hi=`click${Ge}${Je}`,di=`keydown.dismiss${Ge}`,ui={backdrop:!0,keyboard:!0,scroll:!1},_i={backdrop:&quot;(boolean|string)&quot;,keyboard:&quot;boolean&quot;,scroll:&quot;boolean&quot;};class gi extends W{constructor(t,e){super(t,e),this._isShown=!1,this._backdrop=this._initializeBackDrop(),this._focustrap=this._initializeFocusTrap(),this._addEventListeners()}static get Default(){return ui}static get DefaultType(){return _i}static get NAME(){return&quot;offcanvas&quot;}toggle(t){return this._isShown?this.hide():this.show(t)}show(t){this._isShown||j.trigger(this._element,ni,{relatedTarget:t}).defaultPrevented||(this._isShown=!0,this._backdrop.show(),this._config.scroll||(new Ne).hide(),this._element.setAttribute(&quot;aria-modal&quot;,!0),this._element.setAttribute(&quot;role&quot;,&quot;dialog&quot;),this._element.classList.add(ei),this._queueCallback((()=&gt;{this._config.scroll&amp;&amp;!this._config.backdrop||this._focustrap.activate(),this._element.classList.add(ti),this._element.classList.remove(ei),j.trigger(this._element,oi,{relatedTarget:t})}),this._element,!0))}hide(){this._isShown&amp;&amp;(j.trigger(this._element,ri).defaultPrevented||(this._focustrap.deactivate(),this._element.blur(),this._isShown=!1,this._element.classList.add(ii),this._backdrop.hide(),this._queueCallback((()=&gt;{this._element.classList.remove(ti,ii),this._element.removeAttribute(&quot;aria-modal&quot;),this._element.removeAttribute(&quot;role&quot;),this._config.scroll||(new Ne).reset(),j.trigger(this._element,li)}),this._element,!0)))}dispose(){this._backdrop.dispose(),this._focustrap.deactivate(),super.dispose()}_initializeBackDrop(){const t=Boolean(this._config.backdrop);return new we({className:&quot;offcanvas-backdrop&quot;,isVisible:t,isAnimated:!0,rootElement:this._element.parentNode,clickCallback:t?()=&gt;{&quot;static&quot;!==this._config.backdrop?this.hide():j.trigger(this._element,ai)}:null})}_initializeFocusTrap(){return new Se({trapElement:this._element})}_addEventListeners(){j.on(this._element,di,(t=&gt;{&quot;Escape&quot;===t.key&amp;&amp;(this._config.keyboard?this.hide():j.trigger(this._element,ai))}))}static jQueryInterface(t){return this.each((function(){const e=gi.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===e[t]||t.startsWith(&quot;_&quot;)||&quot;constructor&quot;===t)throw new TypeError(`No method named &quot;${t}&quot;`);e[t](this)}}))}}j.on(document,hi,&#39;[data-bs-toggle=&quot;offcanvas&quot;]&#39;,(function(t){const e=K.getElementFromSelector(this);if([&quot;A&quot;,&quot;AREA&quot;].includes(this.tagName)&amp;&amp;t.preventDefault(),d(this))return;j.one(e,li,(()=&gt;{h(this)&amp;&amp;this.focus()}));const i=K.findOne(si);i&amp;&amp;i!==e&amp;&amp;gi.getInstance(i).hide(),gi.getOrCreateInstance(e).toggle(this)})),j.on(window,Ze,(()=&gt;{for(const t of K.find(si))gi.getOrCreateInstance(t).show()})),j.on(window,ci,(()=&gt;{for(const t of K.find(&quot;[aria-modal][class*=show][class*=offcanvas-]&quot;))&quot;fixed&quot;!==getComputedStyle(t).position&amp;&amp;gi.getOrCreateInstance(t).hide()})),V(gi),b(gi);const fi={&quot;*&quot;:[&quot;class&quot;,&quot;dir&quot;,&quot;id&quot;,&quot;lang&quot;,&quot;role&quot;,/^aria-[\w-]*$/i],a:[&quot;target&quot;,&quot;href&quot;,&quot;title&quot;,&quot;rel&quot;],area:[],b:[],br:[],col:[],code:[],dd:[],div:[],dl:[],dt:[],em:[],hr:[],h1:[],h2:[],h3:[],h4:[],h5:[],h6:[],i:[],img:[&quot;src&quot;,&quot;srcset&quot;,&quot;alt&quot;,&quot;title&quot;,&quot;width&quot;,&quot;height&quot;],li:[],ol:[],p:[],pre:[],s:[],small:[],span:[],sub:[],sup:[],strong:[],u:[],ul:[]},mi=new Set([&quot;background&quot;,&quot;cite&quot;,&quot;href&quot;,&quot;itemtype&quot;,&quot;longdesc&quot;,&quot;poster&quot;,&quot;src&quot;,&quot;xlink:href&quot;]),pi=/^(?!javascript:)(?:[a-z0-9+.-]+:|[^&amp;:/?#]*(?:[/?#]|$))/i,bi=(t,e)=&gt;{const i=t.nodeName.toLowerCase();return e.includes(i)?!mi.has(i)||Boolean(pi.test(t.nodeValue)):e.filter((t=&gt;t instanceof RegExp)).some((t=&gt;t.test(i)))},vi={allowList:fi,content:{},extraClass:&quot;&quot;,html:!1,sanitize:!0,sanitizeFn:null,template:&quot;&lt;div&gt;&lt;/div&gt;&quot;},yi={allowList:&quot;object&quot;,content:&quot;object&quot;,extraClass:&quot;(string|function)&quot;,html:&quot;boolean&quot;,sanitize:&quot;boolean&quot;,sanitizeFn:&quot;(null|function)&quot;,template:&quot;string&quot;},wi={entry:&quot;(string|element|function|null)&quot;,selector:&quot;(string|element)&quot;};class Ai extends q{constructor(t){super(),this._config=this._getConfig(t)}static get Default(){return vi}static get DefaultType(){return yi}static get NAME(){return&quot;TemplateFactory&quot;}getContent(){return Object.values(this._config.content).map((t=&gt;this._resolvePossibleFunction(t))).filter(Boolean)}hasContent(){return this.getContent().length&gt;0}changeContent(t){return this._checkContent(t),this._config.content={...this._config.content,...t},this}toHtml(){const t=document.createElement(&quot;div&quot;);t.innerHTML=this._maybeSanitize(this._config.template);for(const[e,i]of Object.entries(this._config.content))this._setContent(t,i,e);const e=t.children[0],i=this._resolvePossibleFunction(this._config.extraClass);return i&amp;&amp;e.classList.add(...i.split(&quot; &quot;)),e}_typeCheckConfig(t){super._typeCheckConfig(t),this._checkContent(t.content)}_checkContent(t){for(const[e,i]of Object.entries(t))super._typeCheckConfig({selector:e,entry:i},wi)}_setContent(t,e,i){const s=K.findOne(i,t);s&amp;&amp;((e=this._resolvePossibleFunction(e))?l(e)?this._putElementInTemplate(c(e),s):this._config.html?s.innerHTML=this._maybeSanitize(e):s.textContent=e:s.remove())}_maybeSanitize(t){return this._config.sanitize?function(t,e,i){if(!t.length)return t;if(i&amp;&amp;&quot;function&quot;==typeof i)return i(t);const s=(new window.DOMParser).parseFromString(t,&quot;text/html&quot;),n=[].concat(...s.body.querySelectorAll(&quot;*&quot;));for(const t of n){const i=t.nodeName.toLowerCase();if(!Object.keys(e).includes(i)){t.remove();continue}const s=[].concat(...t.attributes),n=[].concat(e[&quot;*&quot;]||[],e[i]||[]);for(const e of s)bi(e,n)||t.removeAttribute(e.nodeName)}return s.body.innerHTML}(t,this._config.allowList,this._config.sanitizeFn):t}_resolvePossibleFunction(t){return v(t,[this])}_putElementInTemplate(t,e){if(this._config.html)return e.innerHTML=&quot;&quot;,void e.append(t);e.textContent=t.textContent}}const Ei=new Set([&quot;sanitize&quot;,&quot;allowList&quot;,&quot;sanitizeFn&quot;]),Ci=&quot;fade&quot;,Ti=&quot;show&quot;,ki=&quot;.modal&quot;,$i=&quot;hide.bs.modal&quot;,Si=&quot;hover&quot;,Li=&quot;focus&quot;,Oi={AUTO:&quot;auto&quot;,TOP:&quot;top&quot;,RIGHT:p()?&quot;left&quot;:&quot;right&quot;,BOTTOM:&quot;bottom&quot;,LEFT:p()?&quot;right&quot;:&quot;left&quot;},Ii={allowList:fi,animation:!0,boundary:&quot;clippingParents&quot;,container:!1,customClass:&quot;&quot;,delay:0,fallbackPlacements:[&quot;top&quot;,&quot;right&quot;,&quot;bottom&quot;,&quot;left&quot;],html:!1,offset:[0,6],placement:&quot;top&quot;,popperConfig:null,sanitize:!0,sanitizeFn:null,selector:!1,template:&#39;&lt;div class=&quot;tooltip&quot; role=&quot;tooltip&quot;&gt;&lt;div class=&quot;tooltip-arrow&quot;&gt;&lt;/div&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#39;,title:&quot;&quot;,trigger:&quot;hover focus&quot;},Di={allowList:&quot;object&quot;,animation:&quot;boolean&quot;,boundary:&quot;(string|element)&quot;,container:&quot;(string|element|boolean)&quot;,customClass:&quot;(string|function)&quot;,delay:&quot;(number|object)&quot;,fallbackPlacements:&quot;array&quot;,html:&quot;boolean&quot;,offset:&quot;(array|string|function)&quot;,placement:&quot;(string|function)&quot;,popperConfig:&quot;(null|object|function)&quot;,sanitize:&quot;boolean&quot;,sanitizeFn:&quot;(null|function)&quot;,selector:&quot;(string|boolean)&quot;,template:&quot;string&quot;,title:&quot;(string|element|function)&quot;,trigger:&quot;string&quot;};class Ni extends W{constructor(t,e){if(void 0===i)throw new TypeError(&quot;Bootstrap&#39;s tooltips require Popper (https://popper.js.org)&quot;);super(t,e),this._isEnabled=!0,this._timeout=0,this._isHovered=null,this._activeTrigger={},this._popper=null,this._templateFactory=null,this._newContent=null,this.tip=null,this._setListeners(),this._config.selector||this._fixTitle()}static get Default(){return Ii}static get DefaultType(){return Di}static get NAME(){return&quot;tooltip&quot;}enable(){this._isEnabled=!0}disable(){this._isEnabled=!1}toggleEnabled(){this._isEnabled=!this._isEnabled}toggle(){this._isEnabled&amp;&amp;(this._activeTrigger.click=!this._activeTrigger.click,this._isShown()?this._leave():this._enter())}dispose(){clearTimeout(this._timeout),j.off(this._element.closest(ki),$i,this._hideModalHandler),this._element.getAttribute(&quot;data-bs-original-title&quot;)&amp;&amp;this._element.setAttribute(&quot;title&quot;,this._element.getAttribute(&quot;data-bs-original-title&quot;)),this._disposePopper(),super.dispose()}show(){if(&quot;none&quot;===this._element.style.display)throw new Error(&quot;Please use show on visible elements&quot;);if(!this._isWithContent()||!this._isEnabled)return;const t=j.trigger(this._element,this.constructor.eventName(&quot;show&quot;)),e=(u(this._element)||this._element.ownerDocument.documentElement).contains(this._element);if(t.defaultPrevented||!e)return;this._disposePopper();const i=this._getTipElement();this._element.setAttribute(&quot;aria-describedby&quot;,i.getAttribute(&quot;id&quot;));const{container:s}=this._config;if(this._element.ownerDocument.documentElement.contains(this.tip)||(s.append(i),j.trigger(this._element,this.constructor.eventName(&quot;inserted&quot;))),this._popper=this._createPopper(i),i.classList.add(Ti),&quot;ontouchstart&quot;in document.documentElement)for(const t of[].concat(...document.body.children))j.on(t,&quot;mouseover&quot;,_);this._queueCallback((()=&gt;{j.trigger(this._element,this.constructor.eventName(&quot;shown&quot;)),!1===this._isHovered&amp;&amp;this._leave(),this._isHovered=!1}),this.tip,this._isAnimated())}hide(){if(this._isShown()&amp;&amp;!j.trigger(this._element,this.constructor.eventName(&quot;hide&quot;)).defaultPrevented){if(this._getTipElement().classList.remove(Ti),&quot;ontouchstart&quot;in document.documentElement)for(const t of[].concat(...document.body.children))j.off(t,&quot;mouseover&quot;,_);this._activeTrigger.click=!1,this._activeTrigger[Li]=!1,this._activeTrigger[Si]=!1,this._isHovered=null,this._queueCallback((()=&gt;{this._isWithActiveTrigger()||(this._isHovered||this._disposePopper(),this._element.removeAttribute(&quot;aria-describedby&quot;),j.trigger(this._element,this.constructor.eventName(&quot;hidden&quot;)))}),this.tip,this._isAnimated())}}update(){this._popper&amp;&amp;this._popper.update()}_isWithContent(){return Boolean(this._getTitle())}_getTipElement(){return this.tip||(this.tip=this._createTipElement(this._newContent||this._getContentForTemplate())),this.tip}_createTipElement(t){const e=this._getTemplateFactory(t).toHtml();if(!e)return null;e.classList.remove(Ci,Ti),e.classList.add(`bs-${this.constructor.NAME}-auto`);const i=(t=&gt;{do{t+=Math.floor(1e6*Math.random())}while(document.getElementById(t));return t})(this.constructor.NAME).toString();return e.setAttribute(&quot;id&quot;,i),this._isAnimated()&amp;&amp;e.classList.add(Ci),e}setContent(t){this._newContent=t,this._isShown()&amp;&amp;(this._disposePopper(),this.show())}_getTemplateFactory(t){return this._templateFactory?this._templateFactory.changeContent(t):this._templateFactory=new Ai({...this._config,content:t,extraClass:this._resolvePossibleFunction(this._config.customClass)}),this._templateFactory}_getContentForTemplate(){return{&quot;.tooltip-inner&quot;:this._getTitle()}}_getTitle(){return this._resolvePossibleFunction(this._config.title)||this._element.getAttribute(&quot;data-bs-original-title&quot;)}_initializeOnDelegatedTarget(t){return this.constructor.getOrCreateInstance(t.delegateTarget,this._getDelegateConfig())}_isAnimated(){return this._config.animation||this.tip&amp;&amp;this.tip.classList.contains(Ci)}_isShown(){return this.tip&amp;&amp;this.tip.classList.contains(Ti)}_createPopper(t){const e=v(this._config.placement,[this,t,this._element]),s=Oi[e.toUpperCase()];return i.createPopper(this._element,t,this._getPopperConfig(s))}_getOffset(){const{offset:t}=this._config;return&quot;string&quot;==typeof t?t.split(&quot;,&quot;).map((t=&gt;Number.parseInt(t,10))):&quot;function&quot;==typeof t?e=&gt;t(e,this._element):t}_resolvePossibleFunction(t){return v(t,[this._element])}_getPopperConfig(t){const e={placement:t,modifiers:[{name:&quot;flip&quot;,options:{fallbackPlacements:this._config.fallbackPlacements}},{name:&quot;offset&quot;,options:{offset:this._getOffset()}},{name:&quot;preventOverflow&quot;,options:{boundary:this._config.boundary}},{name:&quot;arrow&quot;,options:{element:`.${this.constructor.NAME}-arrow`}},{name:&quot;preSetPlacement&quot;,enabled:!0,phase:&quot;beforeMain&quot;,fn:t=&gt;{this._getTipElement().setAttribute(&quot;data-popper-placement&quot;,t.state.placement)}}]};return{...e,...v(this._config.popperConfig,[e])}}_setListeners(){const t=this._config.trigger.split(&quot; &quot;);for(const e of t)if(&quot;click&quot;===e)j.on(this._element,this.constructor.eventName(&quot;click&quot;),this._config.selector,(t=&gt;{this._initializeOnDelegatedTarget(t).toggle()}));else if(&quot;manual&quot;!==e){const t=e===Si?this.constructor.eventName(&quot;mouseenter&quot;):this.constructor.eventName(&quot;focusin&quot;),i=e===Si?this.constructor.eventName(&quot;mouseleave&quot;):this.constructor.eventName(&quot;focusout&quot;);j.on(this._element,t,this._config.selector,(t=&gt;{const e=this._initializeOnDelegatedTarget(t);e._activeTrigger[&quot;focusin&quot;===t.type?Li:Si]=!0,e._enter()})),j.on(this._element,i,this._config.selector,(t=&gt;{const e=this._initializeOnDelegatedTarget(t);e._activeTrigger[&quot;focusout&quot;===t.type?Li:Si]=e._element.contains(t.relatedTarget),e._leave()}))}this._hideModalHandler=()=&gt;{this._element&amp;&amp;this.hide()},j.on(this._element.closest(ki),$i,this._hideModalHandler)}_fixTitle(){const t=this._element.getAttribute(&quot;title&quot;);t&amp;&amp;(this._element.getAttribute(&quot;aria-label&quot;)||this._element.textContent.trim()||this._element.setAttribute(&quot;aria-label&quot;,t),this._element.setAttribute(&quot;data-bs-original-title&quot;,t),this._element.removeAttribute(&quot;title&quot;))}_enter(){this._isShown()||this._isHovered?this._isHovered=!0:(this._isHovered=!0,this._setTimeout((()=&gt;{this._isHovered&amp;&amp;this.show()}),this._config.delay.show))}_leave(){this._isWithActiveTrigger()||(this._isHovered=!1,this._setTimeout((()=&gt;{this._isHovered||this.hide()}),this._config.delay.hide))}_setTimeout(t,e){clearTimeout(this._timeout),this._timeout=setTimeout(t,e)}_isWithActiveTrigger(){return Object.values(this._activeTrigger).includes(!0)}_getConfig(t){const e=B.getDataAttributes(this._element);for(const t of Object.keys(e))Ei.has(t)&amp;&amp;delete e[t];return t={...e,...&quot;object&quot;==typeof t&amp;&amp;t?t:{}},t=this._mergeConfigObj(t),t=this._configAfterMerge(t),this._typeCheckConfig(t),t}_configAfterMerge(t){return t.container=!1===t.container?document.body:c(t.container),&quot;number&quot;==typeof t.delay&amp;&amp;(t.delay={show:t.delay,hide:t.delay}),&quot;number&quot;==typeof t.title&amp;&amp;(t.title=t.title.toString()),&quot;number&quot;==typeof t.content&amp;&amp;(t.content=t.content.toString()),t}_getDelegateConfig(){const t={};for(const[e,i]of Object.entries(this._config))this.constructor.Default[e]!==i&amp;&amp;(t[e]=i);return t.selector=!1,t.trigger=&quot;manual&quot;,t}_disposePopper(){this._popper&amp;&amp;(this._popper.destroy(),this._popper=null),this.tip&amp;&amp;(this.tip.remove(),this.tip=null)}static jQueryInterface(t){return this.each((function(){const e=Ni.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===e[t])throw new TypeError(`No method named &quot;${t}&quot;`);e[t]()}}))}}b(Ni);const Pi={...Ni.Default,content:&quot;&quot;,offset:[0,8],placement:&quot;right&quot;,template:&#39;&lt;div class=&quot;popover&quot; role=&quot;tooltip&quot;&gt;&lt;div class=&quot;popover-arrow&quot;&gt;&lt;/div&gt;&lt;h3 class=&quot;popover-header&quot;&gt;&lt;/h3&gt;&lt;div class=&quot;popover-body&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#39;,trigger:&quot;click&quot;},xi={...Ni.DefaultType,content:&quot;(null|string|element|function)&quot;};class Mi extends Ni{static get Default(){return Pi}static get DefaultType(){return xi}static get NAME(){return&quot;popover&quot;}_isWithContent(){return this._getTitle()||this._getContent()}_getContentForTemplate(){return{&quot;.popover-header&quot;:this._getTitle(),&quot;.popover-body&quot;:this._getContent()}}_getContent(){return this._resolvePossibleFunction(this._config.content)}static jQueryInterface(t){return this.each((function(){const e=Mi.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===e[t])throw new TypeError(`No method named &quot;${t}&quot;`);e[t]()}}))}}b(Mi);const ji=&quot;.bs.scrollspy&quot;,Fi=`activate${ji}`,zi=`click${ji}`,Hi=`load${ji}.data-api`,Bi=&quot;active&quot;,qi=&quot;[href]&quot;,Wi=&quot;.nav-link&quot;,Ri=`${Wi}, .nav-item &gt; ${Wi}, .list-group-item`,Ki={offset:null,rootMargin:&quot;0px 0px -25%&quot;,smoothScroll:!1,target:null,threshold:[.1,.5,1]},Vi={offset:&quot;(number|null)&quot;,rootMargin:&quot;string&quot;,smoothScroll:&quot;boolean&quot;,target:&quot;element&quot;,threshold:&quot;array&quot;};class Qi extends W{constructor(t,e){super(t,e),this._targetLinks=new Map,this._observableSections=new Map,this._rootElement=&quot;visible&quot;===getComputedStyle(this._element).overflowY?null:this._element,this._activeTarget=null,this._observer=null,this._previousScrollData={visibleEntryTop:0,parentScrollTop:0},this.refresh()}static get Default(){return Ki}static get DefaultType(){return Vi}static get NAME(){return&quot;scrollspy&quot;}refresh(){this._initializeTargetsAndObservables(),this._maybeEnableSmoothScroll(),this._observer?this._observer.disconnect():this._observer=this._getNewObserver();for(const t of this._observableSections.values())this._observer.observe(t)}dispose(){this._observer.disconnect(),super.dispose()}_configAfterMerge(t){return t.target=c(t.target)||document.body,t.rootMargin=t.offset?`${t.offset}px 0px -30%`:t.rootMargin,&quot;string&quot;==typeof t.threshold&amp;&amp;(t.threshold=t.threshold.split(&quot;,&quot;).map((t=&gt;Number.parseFloat(t)))),t}_maybeEnableSmoothScroll(){this._config.smoothScroll&amp;&amp;(j.off(this._config.target,zi),j.on(this._config.target,zi,qi,(t=&gt;{const e=this._observableSections.get(t.target.hash);if(e){t.preventDefault();const i=this._rootElement||window,s=e.offsetTop-this._element.offsetTop;if(i.scrollTo)return void i.scrollTo({top:s,behavior:&quot;smooth&quot;});i.scrollTop=s}})))}_getNewObserver(){const t={root:this._rootElement,threshold:this._config.threshold,rootMargin:this._config.rootMargin};return new IntersectionObserver((t=&gt;this._observerCallback(t)),t)}_observerCallback(t){const e=t=&gt;this._targetLinks.get(`#${t.target.id}`),i=t=&gt;{this._previousScrollData.visibleEntryTop=t.target.offsetTop,this._process(e(t))},s=(this._rootElement||document.documentElement).scrollTop,n=s&gt;=this._previousScrollData.parentScrollTop;this._previousScrollData.parentScrollTop=s;for(const o of t){if(!o.isIntersecting){this._activeTarget=null,this._clearActiveClass(e(o));continue}const t=o.target.offsetTop&gt;=this._previousScrollData.visibleEntryTop;if(n&amp;&amp;t){if(i(o),!s)return}else n||t||i(o)}}_initializeTargetsAndObservables(){this._targetLinks=new Map,this._observableSections=new Map;const t=K.find(qi,this._config.target);for(const e of t){if(!e.hash||d(e))continue;const t=K.findOne(decodeURI(e.hash),this._element);h(t)&amp;&amp;(this._targetLinks.set(decodeURI(e.hash),e),this._observableSections.set(e.hash,t))}}_process(t){this._activeTarget!==t&amp;&amp;(this._clearActiveClass(this._config.target),this._activeTarget=t,t.classList.add(Bi),this._activateParents(t),j.trigger(this._element,Fi,{relatedTarget:t}))}_activateParents(t){if(t.classList.contains(&quot;dropdown-item&quot;))K.findOne(&quot;.dropdown-toggle&quot;,t.closest(&quot;.dropdown&quot;)).classList.add(Bi);else for(const e of K.parents(t,&quot;.nav, .list-group&quot;))for(const t of K.prev(e,Ri))t.classList.add(Bi)}_clearActiveClass(t){t.classList.remove(Bi);const e=K.find(`${qi}.${Bi}`,t);for(const t of e)t.classList.remove(Bi)}static jQueryInterface(t){return this.each((function(){const e=Qi.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===e[t]||t.startsWith(&quot;_&quot;)||&quot;constructor&quot;===t)throw new TypeError(`No method named &quot;${t}&quot;`);e[t]()}}))}}j.on(window,Hi,(()=&gt;{for(const t of K.find(&#39;[data-bs-spy=&quot;scroll&quot;]&#39;))Qi.getOrCreateInstance(t)})),b(Qi);const Xi=&quot;.bs.tab&quot;,Yi=`hide${Xi}`,Ui=`hidden${Xi}`,Gi=`show${Xi}`,Ji=`shown${Xi}`,Zi=`click${Xi}`,ts=`keydown${Xi}`,es=`load${Xi}`,is=&quot;ArrowLeft&quot;,ss=&quot;ArrowRight&quot;,ns=&quot;ArrowUp&quot;,os=&quot;ArrowDown&quot;,rs=&quot;Home&quot;,as=&quot;End&quot;,ls=&quot;active&quot;,cs=&quot;fade&quot;,hs=&quot;show&quot;,ds=&quot;.dropdown-toggle&quot;,us=`:not(${ds})`,_s=&#39;[data-bs-toggle=&quot;tab&quot;], [data-bs-toggle=&quot;pill&quot;], [data-bs-toggle=&quot;list&quot;]&#39;,gs=`.nav-link${us}, .list-group-item${us}, [role=&quot;tab&quot;]${us}, ${_s}`,fs=`.${ls}[data-bs-toggle=&quot;tab&quot;], .${ls}[data-bs-toggle=&quot;pill&quot;], .${ls}[data-bs-toggle=&quot;list&quot;]`;class ms extends W{constructor(t){super(t),this._parent=this._element.closest(&#39;.list-group, .nav, [role=&quot;tablist&quot;]&#39;),this._parent&amp;&amp;(this._setInitialAttributes(this._parent,this._getChildren()),j.on(this._element,ts,(t=&gt;this._keydown(t))))}static get NAME(){return&quot;tab&quot;}show(){const t=this._element;if(this._elemIsActive(t))return;const e=this._getActiveElem(),i=e?j.trigger(e,Yi,{relatedTarget:t}):null;j.trigger(t,Gi,{relatedTarget:e}).defaultPrevented||i&amp;&amp;i.defaultPrevented||(this._deactivate(e,t),this._activate(t,e))}_activate(t,e){t&amp;&amp;(t.classList.add(ls),this._activate(K.getElementFromSelector(t)),this._queueCallback((()=&gt;{&quot;tab&quot;===t.getAttribute(&quot;role&quot;)?(t.removeAttribute(&quot;tabindex&quot;),t.setAttribute(&quot;aria-selected&quot;,!0),this._toggleDropDown(t,!0),j.trigger(t,Ji,{relatedTarget:e})):t.classList.add(hs)}),t,t.classList.contains(cs)))}_deactivate(t,e){t&amp;&amp;(t.classList.remove(ls),t.blur(),this._deactivate(K.getElementFromSelector(t)),this._queueCallback((()=&gt;{&quot;tab&quot;===t.getAttribute(&quot;role&quot;)?(t.setAttribute(&quot;aria-selected&quot;,!1),t.setAttribute(&quot;tabindex&quot;,&quot;-1&quot;),this._toggleDropDown(t,!1),j.trigger(t,Ui,{relatedTarget:e})):t.classList.remove(hs)}),t,t.classList.contains(cs)))}_keydown(t){if(![is,ss,ns,os,rs,as].includes(t.key))return;t.stopPropagation(),t.preventDefault();const e=this._getChildren().filter((t=&gt;!d(t)));let i;if([rs,as].includes(t.key))i=e[t.key===rs?0:e.length-1];else{const s=[ss,os].includes(t.key);i=w(e,t.target,s,!0)}i&amp;&amp;(i.focus({preventScroll:!0}),ms.getOrCreateInstance(i).show())}_getChildren(){return K.find(gs,this._parent)}_getActiveElem(){return this._getChildren().find((t=&gt;this._elemIsActive(t)))||null}_setInitialAttributes(t,e){this._setAttributeIfNotExists(t,&quot;role&quot;,&quot;tablist&quot;);for(const t of e)this._setInitialAttributesOnChild(t)}_setInitialAttributesOnChild(t){t=this._getInnerElement(t);const e=this._elemIsActive(t),i=this._getOuterElement(t);t.setAttribute(&quot;aria-selected&quot;,e),i!==t&amp;&amp;this._setAttributeIfNotExists(i,&quot;role&quot;,&quot;presentation&quot;),e||t.setAttribute(&quot;tabindex&quot;,&quot;-1&quot;),this._setAttributeIfNotExists(t,&quot;role&quot;,&quot;tab&quot;),this._setInitialAttributesOnTargetPanel(t)}_setInitialAttributesOnTargetPanel(t){const e=K.getElementFromSelector(t);e&amp;&amp;(this._setAttributeIfNotExists(e,&quot;role&quot;,&quot;tabpanel&quot;),t.id&amp;&amp;this._setAttributeIfNotExists(e,&quot;aria-labelledby&quot;,`${t.id}`))}_toggleDropDown(t,e){const i=this._getOuterElement(t);if(!i.classList.contains(&quot;dropdown&quot;))return;const s=(t,s)=&gt;{const n=K.findOne(t,i);n&amp;&amp;n.classList.toggle(s,e)};s(ds,ls),s(&quot;.dropdown-menu&quot;,hs),i.setAttribute(&quot;aria-expanded&quot;,e)}_setAttributeIfNotExists(t,e,i){t.hasAttribute(e)||t.setAttribute(e,i)}_elemIsActive(t){return t.classList.contains(ls)}_getInnerElement(t){return t.matches(gs)?t:K.findOne(gs,t)}_getOuterElement(t){return t.closest(&quot;.nav-item, .list-group-item&quot;)||t}static jQueryInterface(t){return this.each((function(){const e=ms.getOrCreateInstance(this);if(&quot;string&quot;==typeof t){if(void 0===e[t]||t.startsWith(&quot;_&quot;)||&quot;constructor&quot;===t)throw new TypeError(`No method named &quot;${t}&quot;`);e[t]()}}))}}j.on(document,Zi,_s,(function(t){[&quot;A&quot;,&quot;AREA&quot;].includes(this.tagName)&amp;&amp;t.preventDefault(),d(this)||ms.getOrCreateInstance(this).show()})),j.on(window,es,(()=&gt;{for(const t of K.find(fs))ms.getOrCreateInstance(t)})),b(ms);const ps=&quot;.bs.toast&quot;,bs=`mouseover${ps}`,vs=`mouseout${ps}`,ys=`focusin${ps}`,ws=`focusout${ps}`,As=`hide${ps}`,Es=`hidden${ps}`,Cs=`show${ps}`,Ts=`shown${ps}`,ks=&quot;hide&quot;,$s=&quot;show&quot;,Ss=&quot;showing&quot;,Ls={animation:&quot;boolean&quot;,autohide:&quot;boolean&quot;,delay:&quot;number&quot;},Os={animation:!0,autohide:!0,delay:5e3};class Is extends W{constructor(t,e){super(t,e),this._timeout=null,this._hasMouseInteraction=!1,this._hasKeyboardInteraction=!1,this._setListeners()}static get Default(){return Os}static get DefaultType(){return Ls}static get NAME(){return&quot;toast&quot;}show(){j.trigger(this._element,Cs).defaultPrevented||(this._clearTimeout(),this._config.animation&amp;&amp;this._element.classList.add(&quot;fade&quot;),this._element.classList.remove(ks),g(this._element),this._element.classList.add($s,Ss),this._queueCallback((()=&gt;{this._element.classList.remove(Ss),j.trigger(this._element,Ts),this._maybeScheduleHide()}),this._element,this._config.animation))}hide(){this.isShown()&amp;&amp;(j.trigger(this._element,As).defaultPrevented||(this._element.classList.add(Ss),this._queueCallback((()=&gt;{this._element.classList.add(ks),this._element.classList.remove(Ss,$s),j.trigger(this._element,Es)}),this._element,this._config.animation)))}dispose(){this._clearTimeout(),this.isShown()&amp;&amp;this._element.classList.remove($s),super.dispose()}isShown(){return this._element.classList.contains($s)}_maybeScheduleHide(){this._config.autohide&amp;&amp;(this._hasMouseInteraction||this._hasKeyboardInteraction||(this._timeout=setTimeout((()=&gt;{this.hide()}),this._config.delay)))}_onInteraction(t,e){switch(t.type){case&quot;mouseover&quot;:case&quot;mouseout&quot;:this._hasMouseInteraction=e;break;case&quot;focusin&quot;:case&quot;focusout&quot;:this._hasKeyboardInteraction=e}if(e)return void this._clearTimeout();const i=t.relatedTarget;this._element===i||this._element.contains(i)||this._maybeScheduleHide()}_setListeners(){j.on(this._element,bs,(t=&gt;this._onInteraction(t,!0))),j.on(this._element,vs,(t=&gt;this._onInteraction(t,!1))),j.on(this._element,ys,(t=&gt;this._onInteraction(t,!0))),j.on(this._element,ws,(t=&gt;this._onInteraction(t,!1)))}_clearTimeout(){clearTimeout(this._timeout),this._timeout=null}static jQueryInterface(t){return this.each((function(){const e=Is.getOrCreateInstance(this,t);if(&quot;string&quot;==typeof t){if(void 0===e[t])throw new TypeError(`No method named &quot;${t}&quot;`);e[t](this)}}))}}return V(Is),b(Is),{Alert:U,Button:J,Carousel:Ot,Collapse:Rt,Dropdown:fe,Modal:Ue,Offcanvas:gi,Popover:Mi,ScrollSpy:Qi,Tab:ms,Toast:Is,Tooltip:Ni}}));
+//# sourceMappingURL=bootstrap.min.js.map</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>select</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Eliminar todos los comentarios que muestren información que pueda ayudar a un atacante y solucionar el problema al que se refieren.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				  
+			</ol>
+		</section>
+
+		<section id="appendix" class="appendix">
+			<h2>Appendix</h2>
+
+			<section id="alert-types" class="alert-types">
+				<h3>Alert types</h3>
+				<p class="alert-types-intro">This section contains additional information on the types of alerts in the report.</p>
+				<ol>
+					<li
+						id="alert-type-0">
+						<h4>Divulgación de información - Comentarios sospechosos</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10027/">Divulgación de información - Comentarios sospechosos</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							
+						</table>
+					</li>
+					<li
+						id="alert-type-1">
+						<h4>Petición de Autenticación Identificada</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10111/">Petición de Autenticación Identificada</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/">https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-2">
+						<h4>Respuesta de Gestión de Sesión Identificada</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10112/">Respuesta de Gestión de Sesión Identificada</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id">https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-3">
+						<h4>User Agent Fuzzer</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by an active scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10104/">User Agent Fuzzer</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://owasp.org/wstg">https://owasp.org/wstg</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+				</ol>
+			</section>
+		</section>
+		 
+	</main>
+</body>
+</html>
+
+
+
