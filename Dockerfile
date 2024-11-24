@@ -9,4 +9,8 @@ RUN a2enmod rewrite headers
 COPY ./app/.htaccess /var/www/html/.htaccess
 RUN service apache2 restart
 
+# Configuración PHP
+RUN echo 'session.cookie_httponly=1' >> /usr/local/etc/php/conf.d/session.ini && \
+    echo 'session.cookie_secure=1' >> /usr/local/etc/php/conf.d/session.ini
+
 RUN docker-php-ext-install mysqli
