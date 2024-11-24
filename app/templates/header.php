@@ -1,4 +1,5 @@
 <?php
+    header('X-Frame-Options: DENY');
     session_start(); // Asegúrate de que la sesión se inicia antes de cualquier HTML
 ?>
 <!DOCTYPE html>
