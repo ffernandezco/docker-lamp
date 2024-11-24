@@ -1,5 +1,4 @@
 <?php
-header('X-Frame-Options: DENY');
 session_start();
 
 // Configuración de la base de datos
