@@ -21,7 +21,7 @@ if (isset($_GET['error'])) {
         case 'invaliddate':
             $error_message = 'Formato de fecha inválido. Use AAAA-MM-DD.';
             break;
-        case 'emptyfields':
+        case 'general':
             $error_message = 'Datos inválidos o incompletos.';
             break;
         case 'update':

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validar y sanitizar el ID
     $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
     if ($id === false) {
-        header("Location: /error.php?error=emptyfields");
+        header("Location: /");
         exit();
     }
 

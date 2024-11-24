@@ -3,19 +3,16 @@ session_start();
 include 'templates/header.php';
 
 // Obtener el mensaje de error de la URL
-$error_message = '';
+$error_message = 'Ocurrió un error.';
 $redirect_url = '/'; // URL de redirección predeterminada
 
 if (isset($_GET['error'])) {
-    switch ($_GET['error']) {
+    switch ($_GET['error'])) {
         case 'insert':
             $error_message = 'Error al añadir el alimento. Inténtalo de nuevo.';
             break;
         case 'prepare':
             $error_message = 'Error al preparar la consulta.';
-            break;
-        case 'emptyfields':
-            $error_message = 'Deben completarse todos los campos.';
             break;
         case 'delete':
             $error_message = 'Error al eliminar el alimento. Inténtalo de nuevo.';
@@ -33,8 +30,9 @@ if (isset($_GET['error'])) {
             $error_message = 'Hubo un error al actualizar el alimento.';
             $redirect_url = '/modify_item.php';
             break;
-        default:
-            $error_message = 'Ocurrió un error desconocido.';
+        case 'connection':
+            $error_message = 'Error de conexión a la base de datos. Por favor, inténtalo más tarde.';
+            break;
     }
 }
 ?>
@@ -42,11 +40,11 @@ if (isset($_GET['error'])) {
 <div class="container mt-5 col-md-8">
     <h1 class="text-center">Error</h1>
     <div class="alert alert-danger mt-5 p-4" role="alert">
-        <?php echo $error_message; ?>
+        <?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?>
     </div>
 
     <div class="mt-5 text-center">
-        <a href="<?php echo $redirect_url; ?>" class="btn btn-primary">Volver a inicio</a>
+        <a href="<?php echo htmlspecialchars($redirect_url, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary">Volver a inicio</a>
     </div>
 </div>
 

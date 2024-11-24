@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Comprobación de campos obligatorios
     if ($id === false || !$nombre || !$apellidos || !$dni || !$tel || !$fechanacimiento || !$email || !$password) {
-        header("Location: /login_error.php?error=emptyfields");
+        header("Location: /login_error.php?error=general");
         exit();
     }
 

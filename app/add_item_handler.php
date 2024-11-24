@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+ini_set('display_errors', 0);
+error_reporting(0);
 
 $hostname = "db";
 $username = "admin";
@@ -11,7 +11,9 @@ $db = "database";
 
 $conn = mysqli_connect($hostname, $username, $password, $db);
 if ($conn->connect_error) {
-    die("Error de conexión a la DB: " . $conn->connect_error);
+    error_log("Error de conexión a la DB: " . $conn->connect_error);
+    header("Location: /error.php?error=connection");
+    exit();
 }
 
 // Obtenemos los datos del formulario
@@ -38,18 +40,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: /items");
                 exit();
             } else {
+                error_log("Error al ejecutar la consulta: " . $stmt->error);
                 header("Location: /error.php?error=insert");
                 exit();
             }
 
             $stmt->close();
         } else {
+            error_log("Error al preparar la consulta: " . $conn->error);
             header("Location: /error.php?error=prepare");
             exit();
         }
         
     } else {
-        header("Location: /error.php?error=emptyfields");
+        header("Location: /");
         exit();
     }
 }
