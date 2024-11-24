@@ -8,9 +8,9 @@ RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
 ErrorDocument 404 /404.php
 
 # CSP
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none';"
-</IfModule>
+# <IfModule mod_headers.c>
+#     Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none';"
+# </IfModule>
 
 # Cabecera Anti-Clickjacking
 <IfModule mod_headers.c>

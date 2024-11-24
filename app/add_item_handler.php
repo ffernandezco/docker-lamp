@@ -1,6 +1,10 @@
 <?php
     session_start();
 
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+
     $hostname = "db";
     $username = "admin";
     $password = "test";
@@ -34,7 +38,8 @@
                 if ($stmt->execute()) {
                     echo "<script>alert('Alimento añadido correctamente'); window.location.href = '/items';</script>";
                 } else {
-                    echo "<script>alert('Error al añadir el alimento'); window.location.href = '/add_item';</script>";
+                    error_log("Error al ejecutar la consulta: " . $stmt->error); // Registra el error específico
+                    echo "<script>alert('Error al añadir el alimento: " . $stmt->error . "'); window.location.href = '/add_item';</script>";
                 }
     
                 $stmt->close();

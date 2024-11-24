@@ -36,6 +36,17 @@ CREATE TABLE `alimentos` (
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `alimentos`
+--
+
+INSERT INTO `alimentos` (`id`, `nombre`, `fcompra`, `fcaducidad`, `calorias`, `precio`) VALUES
+(1, 'Manzana', '2024-09-28', '2024-10-05', 300, 1.5),
+(2, 'Macarrones', '2024-09-29', '2025-01-11', 500, 0.9),
+(3, 'Tomate', '2024-09-28', '2024-10-05', 100, 0.97),
+(4, 'Chorizo', '2024-09-29', '2024-11-13', 800, 3),
+(5, 'Queso', '2024-08-14', '2024-09-30', 400, 4.9);
+
 -- --------------------------------------------------------
 
 --
@@ -75,9 +86,17 @@ INSERT INTO `usuarios` (`id`, `dni`, `nombre`, `apellidos`, `tel`, `fechanacimie
 (7, '79135981L', 'Diego', 'Gonzalez Tamayo', 688805996, '2003-05-03', 'dieguito.ander@yahoo.es', '$2y$10$C73YJradDqketdLsaeHeIeGUozSN/ylexV.FFevXGGNHt0rzlNFIm'),
 (8, '79008700C', 'Xabier', 'Unzilla Higuero', 684007082, '2024-11-04', 'xunzilla@ikasle.ehu.eus', '$2y$10$wY6BbKAwDpxxPy7wKxYn0OwnHDAUOkUG3HZYPO2Uq9jMwWswLyqAO');
 
+
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `alimentos`
+--
+ALTER TABLE `alimentos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -89,6 +108,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `alimentos`
+--
+ALTER TABLE `alimentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
