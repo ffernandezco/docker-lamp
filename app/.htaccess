@@ -22,8 +22,12 @@ ErrorDocument 404 /404.php
     Header set X-Content-Type-Options "nosniff"
 </IfModule>
 
-Header always unset Server
+<IfModule mod_headers.c>
+    Header unset Server
+</IfModule>
 
 <IfModule mod_headers.c>
     Header unset X-Powered-By
 </IfModule>
+
+ServerSignature Off
