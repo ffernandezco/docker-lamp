@@ -1,5 +1,4 @@
 <?php
-header('X-Frame-Options: DENY');
 session_start(); // Inicia o reanuda la sesión
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
